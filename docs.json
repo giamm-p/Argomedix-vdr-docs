@@ -1,16 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "almond",
+  "theme": "maple",
   "name": "Argomedix VDR",
   "colors": {
     "primary": "#0f766e",
     "light": "#2dd4bf",
     "dark": "#0f766e"
-  },
-  "favicon": "/favicon.svg",
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
   },
   "navbar": {
     "links": [
@@ -20,12 +15,12 @@
       },
       {
         "href": "https://app.argomedix.com/welcome",
-        "label": "Sign Up"
+        "label": "Create Your Data Room"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Sign In",
+      "label": "Log In",
       "href": "https://app.argomedix.com/login"
     }
   },
@@ -96,5 +91,8 @@
       }
     ]
   },
-  "description": "The Data Room for MedTech Companies."
+  "description": "The Data Room for MedTech Companies.",
+  "styling": {
+    "eyebrows": "section"
+  }
 }
