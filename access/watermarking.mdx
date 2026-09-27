@@ -1,5 +1,5 @@
 ---
-title: "Protect Documents with Dynamic Watermarking"
+title: "Protect Documents with Dynamic Watermarking in ArgoMedix VDR"
 sidebarTitle: "Watermarking"
 description: "Enable dynamic watermarks in ArgoMedix VDR to stamp every document view with the reviewer's identity, deterring unauthorized sharing."
 ---
@@ -8,13 +8,13 @@ Dynamic watermarking automatically overlays each page of a viewed document with 
 
 ## How Dynamic Watermarking Works
 
-When a reviewer opens a document in the ArgoMedix VDR built-in viewer, the platform intercepts the rendering pipeline and generates a watermark layer on the fly using the reviewer's session data. The watermark is composited onto each page image as it loads in the browser.
+When a reviewer opens a document in the ArgoMedix VDR built-in viewer, the platform automatically generates a personalized watermark overlay unique to that reviewer and renders it on every page in real time.
 
 Key properties of this approach:
 
 - **Original files are never modified.** The source document stored in your data room is always preserved in its original state.
 - **Each reviewer sees a unique watermark.** Two people opening the same document at the same time see completely different overlays tied to their own identity.
-- **Watermarks cannot be removed by the reviewer.** Because the compositing happens server-side before the page image reaches the browser, there is no unprotected version of the page available to the client.
+- **Watermarks cannot be removed by the reviewer.** The watermark is applied as part of the secure viewing experience and is not accessible to the viewer as a separate layer.
 
 ---
 
