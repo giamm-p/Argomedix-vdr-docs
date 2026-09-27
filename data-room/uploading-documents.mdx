@@ -1,0 +1,63 @@
+---
+title: "Upload and Manage Documents in Your Data Room"
+sidebarTitle: "Uploading Documents"
+description: "Upload documents to ArgoMedix VDR individually or in bulk, track upload status, and manage supported file formats and size limits."
+---
+
+Documents are the core of every ArgoMedix VDR data room. When you upload a file, ArgoMedix VDR automatically converts it into a secure viewing format — optimized for fast, browser-based rendering without exposing the underlying source file. This conversion process happens in the background and typically completes within seconds for most document types, so your team can continue uploading while earlier files are already becoming available to reviewers. Understanding the upload workflow, supported formats, and size limits helps you get a room fully populated quickly and without surprises.
+
+## Uploading Documents
+
+<Steps>
+  <Step title="Navigate to the destination folder">
+    In the left sidebar, click the folder where you want the uploaded documents to appear. The main content area updates to show that folder's current contents. Uploading while a folder is selected places all files directly into that folder.
+  </Step>
+  <Step title="Initiate the upload">
+    Click **Upload** in the top toolbar to open your operating system's file picker, or drag one or more files from your desktop directly into the main content area. Both methods support selecting multiple files at once.
+  </Step>
+  <Step title="Select your files">
+    In the file picker, select one or more files to upload. You can hold **Shift** to select a contiguous range or **Ctrl / ⌘** to select individual files across different locations on your computer.
+  </Step>
+  <Step title="Monitor the Upload Queue">
+    Once files are selected, the **Upload Queue** panel appears in the bottom-right corner of the screen. Each file shows its upload progress as a percentage bar, followed by a processing indicator while ArgoMedix VDR converts the file to secure viewing format. You can continue working in the data room while uploads complete in the background.
+  </Step>
+  <Step title="Confirm availability">
+    When a file finishes processing, the Upload Queue entry changes to a green checkmark and the document appears in the folder's file list, ready for reviewers to access based on their assigned permissions.
+  </Step>
+</Steps>
+
+---
+
+## Supported File Types
+
+| Category      | Formats                          | Max Size          |
+|---------------|----------------------------------|-------------------|
+| Documents     | PDF, DOCX, DOC, TXT, RTF         | 500 MB            |
+| Spreadsheets  | XLSX, XLS, CSV                   | 500 MB            |
+| Presentations | PPTX, PPT                        | 500 MB            |
+| Images        | PNG, JPG, JPEG, GIF, TIFF        | 100 MB            |
+| Archives      | ZIP (auto-extracted)             | 2 GB              |
+
+<Note>
+  All uploaded documents are converted to a secure viewing format. Reviewers see documents in the built-in viewer — they cannot directly access the original file unless you explicitly grant download permissions.
+</Note>
+
+---
+
+## Bulk Upload
+
+To upload a large set of documents while preserving your existing folder hierarchy, package the files as a **ZIP archive** and upload it to ArgoMedix VDR. When the system detects a ZIP file, it automatically extracts the archive and mirrors the folder structure from the ZIP directly in your data room — subfolders, nested directories, and all file names are reproduced exactly.
+
+This is the fastest way to migrate an existing due diligence folder from a shared drive or local machine into a new data room. After extraction, each file is processed individually into secure viewing format. You can monitor the status of the entire batch in the Upload Queue panel, which shows an aggregate progress indicator for the archive alongside individual file entries as they are extracted and processed.
+
+---
+
+## Upload Restrictions
+
+<Info>
+  Keep the following restrictions in mind when preparing files for upload:
+
+  - **Batch limit:** You can upload a maximum of **500 files** per upload batch. For larger sets, split files across multiple uploads or use a ZIP archive.
+  - **Password-protected files:** Files encrypted with a password (e.g., password-protected PDFs or ZIP archives) cannot be processed by ArgoMedix VDR. Remove password protection before uploading.
+  - **Executable files:** Files with executable extensions — including `.exe`, `.sh`, and `.bat` — are blocked and will not upload. ArgoMedix VDR rejects these file types to protect the security of your data room and its reviewers.
+</Info>

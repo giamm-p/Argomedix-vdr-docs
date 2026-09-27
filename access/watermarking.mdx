@@ -1,0 +1,94 @@
+---
+title: "Protect Documents with Dynamic Watermarking"
+sidebarTitle: "Watermarking"
+description: "Enable dynamic watermarks in ArgoMedix VDR to stamp every document view with the reviewer's identity, deterring unauthorized sharing."
+---
+
+Dynamic watermarking automatically overlays each page of a viewed document with the reviewer's identifying information — this deters unauthorized sharing and, if a document does leak, allows you to trace it directly back to the individual who accessed it. Watermarks are rendered at view time so every reviewer sees a uniquely personalized stamp without any changes to your original files.
+
+## How Dynamic Watermarking Works
+
+When a reviewer opens a document in the ArgoMedix VDR built-in viewer, the platform intercepts the rendering pipeline and generates a watermark layer on the fly using the reviewer's session data. The watermark is composited onto each page image as it loads in the browser.
+
+Key properties of this approach:
+
+- **Original files are never modified.** The source document stored in your data room is always preserved in its original state.
+- **Each reviewer sees a unique watermark.** Two people opening the same document at the same time see completely different overlays tied to their own identity.
+- **Watermarks cannot be removed by the reviewer.** Because the compositing happens server-side before the page image reaches the browser, there is no unprotected version of the page available to the client.
+
+---
+
+## Enabling Watermarks
+
+<Steps>
+  <Step title="Open Security settings">
+    Go to **Data Room Settings → Security**.
+  </Step>
+  <Step title="Toggle watermarking on">
+    Flip the **Enable Watermarking** toggle to the on position.
+  </Step>
+  <Step title="Choose the watermark content">
+    Select which data points to include in the watermark. You can combine any of the following: **Name**, **Email**, **IP Address**, **Date & Time**, and **Custom Text**. See [Watermark Variables](#watermark-variables) below for the full list and syntax.
+  </Step>
+  <Step title="Preview the watermark">
+    Click **Preview** to open a sample document with your configured watermark rendered in real time. Adjust opacity, position, and font size until the result is professional and readable.
+  </Step>
+  <Step title="Save">
+    Click **Save**. Watermarking is applied immediately to all subsequent document views in the data room.
+  </Step>
+</Steps>
+
+---
+
+## Watermark Variables
+
+Use these variables in your watermark text field to insert dynamic per-reviewer values. Variables are replaced at render time with the reviewer's actual data.
+
+| Variable | Inserted Value |
+|---|---|
+| `{{name}}` | Full name of the reviewer as registered in their profile. |
+| `{{email}}` | Email address associated with the reviewer's account or invitation. |
+| `{{ip}}` | IP address recorded at the time the document was opened. |
+| `{{date}}` | Date of access in `YYYY-MM-DD` format. |
+| `{{time}}` | Time of access in `HH:MM UTC` format. |
+| `{{company}}` | Reviewer's organization name, if provided at invite time or in their profile. |
+
+**Example watermark text:**
+
+```
+{{name}} | {{email}}
+Accessed: {{date}} {{time}}
+IP: {{ip}}
+```
+
+This renders as a multi-line stamp unique to each reviewer session.
+
+---
+
+## Custom Watermark Text
+
+In addition to dynamic variables, you can include static text — such as a confidentiality notice — that appears identically for every reviewer.
+
+Enter your static text directly in the **Watermark Text** field, mixing it with any variables you want:
+
+```
+CONFIDENTIAL — DO NOT DISTRIBUTE\n{{name}} | {{email}}\n{{date}} {{time}}
+```
+
+Use `\n` to insert a line break within the watermark string. There is no limit to the number of lines, but keep text concise so it remains legible without obscuring document content.
+
+**Positioning and opacity options:**
+
+| Option | Recommended Value | Notes |
+|---|---|---|
+| **Position** | Center-diagonal | Maximizes visibility across all page layouts. |
+| **Opacity** | 20–30% | Visible enough to deter sharing; unobtrusive enough to read content. |
+| **Font size** | 14–18 pt | Scales with document zoom in the viewer. |
+
+<Tip>
+  Place the watermark in the center-diagonal position for maximum visibility while keeping document content readable. Use 20–30% opacity for a professional look.
+</Tip>
+
+<Note>
+  Watermarks appear in the built-in document viewer and on printed copies if printing is permitted. They do not apply to downloaded files unless the download format is set to **PDF with Watermark** — this option is configurable in **Settings → Security → Download Format**.
+</Note>

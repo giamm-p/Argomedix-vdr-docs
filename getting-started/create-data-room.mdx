@@ -1,0 +1,77 @@
+---
+title: "Create and Configure a New Virtual Data Room"
+sidebarTitle: "Create a Data Room"
+description: "Learn how to create a new data room in ArgoMedix VDR, configure its settings, and prepare it for document uploads and reviewer access."
+---
+
+A data room in ArgoMedix VDR is a secure, isolated workspace that lets you share sensitive documents with a defined group of reviewers under controlled conditions. Each data room operates independently — with its own access list, permissions, audit trail, and security settings — so you can run multiple deals or review processes simultaneously without any overlap. Common use cases include M&A due diligence, Series A and growth-stage fundraising, regulatory submissions, and clinical trial data sharing with sponsors or CROs.
+
+## Create a New Data Room
+
+<Steps>
+  <Step title="Open the New Data Room dialog">
+    From your **Dashboard**, click the **+ New Data Room** button in the top-right corner of the data rooms panel.
+  </Step>
+  <Step title="Enter a Data Room Name">
+    Type a clear, descriptive name for the data room. For sensitive deals, consider using a codename to avoid disclosing details prematurely — for example, **"Project Falcon – Series A"**.
+  </Step>
+  <Step title="Add a Description (optional but recommended)">
+    Enter a brief description to give your team context about the deal or purpose. This description is visible only to workspace members, not to external reviewers.
+  </Step>
+  <Step title="Choose a Data Room Type">
+    Select the security tier that matches your deal's requirements:
+
+    <CardGroup cols={2}>
+      <Card title="Standard" icon="folder-open">
+        Full document access for reviewers, including the ability to download permitted files and copy text. Best for lower-sensitivity workflows or internal reviews.
+      </Card>
+      <Card title="Confidential" icon="shield-halved">
+        Screenshot capture is disabled and copy-paste is restricted at the viewer level. Designed for highly sensitive deals where information leakage is a primary concern.
+      </Card>
+    </CardGroup>
+  </Step>
+  <Step title="Click Create Data Room">
+    Click the **Create Data Room** button to finalize setup. ArgoMedix VDR provisions your new room instantly and redirects you to its home screen, where you can begin uploading documents and configuring access.
+  </Step>
+</Steps>
+
+<Tip>
+  Use a codename for sensitive deals (e.g., "Project Falcon") to avoid revealing deal details to reviewers before NDAs are signed.
+</Tip>
+
+## Data Room Settings
+
+After creating a data room, you can fine-tune its behavior at any time by clicking the **gear icon** (⚙) in the data room header to open the Settings panel. Settings are organized into three tabs:
+
+<Tabs>
+  <Tab title="General">
+    Update the data room's **name** and **description**. Changes take effect immediately and are reflected in audit logs with a timestamp and the editor's name.
+  </Tab>
+  <Tab title="Security">
+    Configure protective controls that apply to all reviewers in the room:
+
+    - **Watermarking** — overlay each viewed page with the reviewer's email address and access timestamp to deter unauthorized sharing.
+    - **Download restrictions** — choose whether reviewers can download files, view only in-browser, or access printable versions.
+    - **Session timeout** — set an inactivity period (5–60 minutes) after which reviewer sessions are automatically terminated and require re-authentication.
+  </Tab>
+  <Tab title="Notifications">
+    Set up **email alerts** to keep your team informed of data room activity, including:
+
+    - New reviewer logins
+    - Document views and downloads
+    - Q&A submissions (if the Q&A module is enabled)
+    - Access requests from uninvited users
+  </Tab>
+</Tabs>
+
+## Archiving and Deleting Data Rooms
+
+When a deal concludes or a review period ends, you have two options for closing out a data room: **archiving** or **deleting**.
+
+**Archiving** transitions a data room to read-only status. Archived rooms remain fully accessible to workspace admins for compliance and record-keeping purposes, and all documents, audit logs, and activity history are preserved. No new uploads, permission changes, or reviewer invitations can be made to an archived room. To archive a room, open **Settings → Archive** and confirm your selection.
+
+**Deleting** permanently removes the data room and all of its contents, including documents, reviewer lists, and audit logs. Deletion requires the **Admin** role and cannot be reversed by ArgoMedix VDR support.
+
+<Warning>
+  Deleting a data room is permanent and cannot be undone. Download all documents and audit reports before deleting.
+</Warning>

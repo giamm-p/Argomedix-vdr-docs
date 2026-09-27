@@ -1,0 +1,70 @@
+---
+title: "Security Features and Compliance in ArgoMedix VDR"
+sidebarTitle: "Security"
+description: "Learn about ArgoMedix VDR's security architecture, encryption standards, compliance certifications, and the controls available to protect your sensitive data."
+---
+
+ArgoMedix VDR is built for industries where data security is not optional — financial services, life sciences, and healthcare. Every layer of the platform, from document storage to viewer sessions, is designed to protect sensitive information and meet the strict regulatory requirements your organization faces. This page details the security architecture, access controls, and compliance certifications that underpin ArgoMedix VDR.
+
+## Data Encryption
+
+ArgoMedix VDR encrypts your documents and communications at every stage of their lifecycle — whether stored on disk, in transit across the network, or actively being viewed by a reviewer.
+
+- **Data at rest:** All stored documents and associated metadata are encrypted using **AES-256** encryption.
+- **Data in transit:** All network communication is protected with **TLS 1.2 or higher**, preventing interception between clients and servers.
+- **Document viewing sessions:** Document viewing occurs over **end-to-end encrypted sessions** — no unencrypted content is exposed at any network hop.
+- **Original files:** Original source files are **never exposed directly to the browser**. ArgoMedix VDR renders a secure, non-downloadable representation of each document during viewing.
+
+## Access Controls
+
+ArgoMedix VDR provides a layered set of access controls so you can enforce the principle of least privilege at every level of your organization and individual data rooms.
+
+- **Role-based permissions:** Assign one of four roles to each user — **Viewer**, **Commenter**, **Editor**, or **Admin** — each with a defined set of allowed actions.
+- **Folder- and file-level permission overrides:** Restrict or expand access to specific folders and individual files, independent of the user's room-level role.
+- **Session timeout enforcement:** Inactive reviewer sessions are automatically terminated after a configurable timeout period.
+- **IP allowlisting:** Restrict data room access to approved IP addresses or CIDR ranges. *(Enterprise plan)*
+- **Device trust policies:** Require that reviewer devices meet your organization's security posture before granting access. *(Enterprise plan)*
+
+## Compliance Certifications
+
+ArgoMedix VDR maintains the following compliance certifications to demonstrate its security and privacy commitments to your organization and your counterparties.
+
+<CardGroup cols={2}>
+  <Card title="SOC 2 Type II" icon="certificate">
+    Annual third-party security audit verifying the design and operating effectiveness of ArgoMedix VDR's security, availability, and confidentiality controls.
+  </Card>
+  <Card title="HIPAA" icon="heart-pulse">
+    Healthcare data handling compliance, supporting covered entities and business associates that manage protected health information (PHI) in ArgoMedix VDR.
+  </Card>
+  <Card title="GDPR" icon="shield">
+    EU data privacy regulation compliance, including data processing agreements, data subject rights support, and privacy-by-design practices.
+  </Card>
+  <Card title="ISO 27001" icon="building-shield">
+    Information security management standard certification, demonstrating a systematic approach to managing sensitive company and customer data.
+  </Card>
+</CardGroup>
+
+## Data Residency
+
+By default, ArgoMedix VDR stores all customer data in the **United States (US)**. If your organization has data localization requirements, customers on **Business** and **Enterprise** plans can select an alternative data residency region.
+
+**Available regions:**
+- 🇺🇸 United States *(default)*
+- 🇪🇺 European Union (EU)
+- 🌏 Asia-Pacific (APAC)
+
+To change your data residency region, navigate to **Workspace Settings → Security → Data Residency** and select your preferred region. Data residency changes take effect for new uploads; existing data migration timelines are coordinated with your account team.
+
+<Warning>
+  Data residency region selection is available on **Business** and **Enterprise** plans only. Changing your region after initial setup may require a migration window — contact your account team before making this change in a live deal environment.
+</Warning>
+
+## Penetration Testing
+
+ArgoMedix VDR undergoes **annual third-party penetration testing** conducted by an independent security firm. These tests cover application-layer, network, and infrastructure attack surfaces to identify and remediate vulnerabilities before they can be exploited.
+
+Customers who need to assess ArgoMedix VDR as part of their own vendor due diligence process can **request a redacted copy of the most recent penetration test summary** by contacting our support team.
+
+<Note>
+  For detailed security documentation, compliance reports, or to complete a vendor security questionnaire, contact our security team at **security@argomedix.com**.
+</Note>

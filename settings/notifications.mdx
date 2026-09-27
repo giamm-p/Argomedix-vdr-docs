@@ -1,0 +1,90 @@
+---
+title: "Configure Email and In-App Notification Preferences"
+sidebarTitle: "Notifications"
+description: "Control which ArgoMedix VDR events trigger email and in-app notifications for you and your team, so you stay informed without inbox overload."
+---
+
+ArgoMedix VDR sends notifications when important events happen in your data rooms — a reviewer views a document, a new user accepts their invitation, or a file is downloaded. Configuring which events trigger alerts helps you stay on top of deal activity without overwhelming your inbox. Notification preferences can be set at the personal level and fine-tuned per data room.
+
+## Personal Notification Settings
+
+Your personal notification preferences apply across all data rooms where you are a member, unless a room-level override is in place.
+
+To access your personal settings, click your **avatar** in the top-right corner and select **Notification Settings**. You will find two independent notification channels:
+
+- **Email Notifications** — Sends alerts to the email address associated with your ArgoMedix VDR account.
+- **In-App Notifications** — Appears in the notification bell (🔔) in the top navigation bar. In-app alerts are visible when you are logged into the platform.
+
+Toggle each channel on or off independently, or configure individual events within each channel.
+
+## Notification Events
+
+The table below lists every trackable event, along with its out-of-the-box default for each notification channel.
+
+| Event | Default (Email) | Default (In-App) |
+|---|:---:|:---:|
+| New document uploaded | ✅ On | ✅ On |
+| Document viewed by reviewer | ❌ Off | ✅ On |
+| Document downloaded | ✅ On | ✅ On |
+| New user invited | ✅ On | ❌ Off |
+| User accepted invitation | ✅ On | ✅ On |
+| NDA accepted | ✅ On | ✅ On |
+| User access revoked | ✅ On | ❌ Off |
+| New version uploaded | ✅ On | ✅ On |
+| Data room settings changed | ✅ On | ❌ Off |
+
+You can override any default by toggling the individual event switches in **Notification Settings**.
+
+## Data Room-Level Notifications
+
+In addition to your personal preferences, each data room has its own notification settings that let you fine-tune alerts for that specific room. Room-level settings **override your personal preferences** for events occurring within that room.
+
+To configure notifications for a specific room:
+
+<Steps>
+  <Step title="Open the data room">
+    Navigate to the data room you want to configure from your ArgoMedix VDR dashboard.
+  </Step>
+  <Step title="Go to room Settings">
+    Click **Settings** in the data room's left navigation panel.
+  </Step>
+  <Step title="Open the Notifications tab">
+    Select the **Notifications** tab to see all event toggles scoped to this room.
+  </Step>
+  <Step title="Adjust and save">
+    Enable or disable individual events, then click **Save** to apply. Changes affect only this room.
+  </Step>
+</Steps>
+
+Room-level muting is especially useful when you are a member of several lower-priority rooms and want to reduce noise without disabling global notifications entirely.
+
+## Digest Emails
+
+Instead of receiving a separate email for each individual event, you can consolidate all activity into a single summary email.
+
+To enable digests, go to **Notification Settings** and select your preferred digest frequency under the **Digest Mode** section:
+
+- **Daily Digest** — Delivers a summary of all data room activity from the previous 24 hours each morning.
+- **Weekly Digest** — Delivers a summary of the past 7 days every Monday morning.
+
+When digest mode is active, individual event emails are suppressed and replaced by the digest. In-app notifications continue to fire in real time regardless of your digest setting.
+
+<Tip>
+  Use daily digest mode for active deal rooms where high document activity would otherwise flood your inbox.
+</Tip>
+
+## Notification Troubleshooting
+
+If you are not receiving expected notifications, work through the following checks before contacting support.
+
+<AccordionGroup>
+  <Accordion title="Emails going to spam or junk" icon="envelope">
+    Check your spam or junk folder for emails from ArgoMedix VDR. Add **notifications@argomedix.com** to your email allowlist or safe senders list to ensure future messages are delivered to your inbox.
+  </Accordion>
+  <Accordion title="Email address not confirmed" icon="circle-check">
+    Notification emails are only sent to a confirmed email address. Go to your **Profile Settings** and verify that your email address shows a confirmed status. If it is unconfirmed, click **Resend Confirmation** and follow the link in the email.
+  </Accordion>
+  <Accordion title="Event toggle is disabled" icon="toggle-off">
+    Review your personal **Notification Settings** and the room-level **Notifications** tab to confirm the specific event type is toggled on. Room-level settings take precedence over personal settings.
+  </Accordion>
+</AccordionGroup>

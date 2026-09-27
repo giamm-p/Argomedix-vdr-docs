@@ -1,0 +1,94 @@
+---
+title: "Invite Reviewers and Collaborators to Your Data Room"
+sidebarTitle: "Inviting Users"
+description: "Send email invitations to reviewers, deal partners, and collaborators in ArgoMedix VDR and manage pending, active, and revoked access."
+---
+
+You can invite anyone to your data room by email — they receive an invitation containing a secure, time-limited link, and their access is governed entirely by the role you assign at the time of invitation. No pre-existing ArgoMedix VDR account is required for recipients to accept.
+
+## Sending an Invitation
+
+<Steps>
+  <Step title="Open the Invite dialog">
+    Open your data room and click **Invite** in the top-right corner of the data room header.
+  </Step>
+  <Step title="Enter email addresses">
+    Type one or more email addresses into the address field. For bulk invites, separate multiple addresses with commas.
+  </Step>
+  <Step title="Select a Role">
+    Choose a role from the **Role** dropdown: **Viewer**, **Commenter**, or **Editor**. Each role controls what the invitee can see and do inside the data room. See [Roles & Permissions](/access/roles-and-permissions) for a full breakdown.
+  </Step>
+  <Step title="Set an Access Expiry date (optional)">
+    Use the **Access Expiry** date picker to automatically revoke access after a specific date. Leave it blank for indefinite access.
+  </Step>
+  <Step title="Add a personal message (optional)">
+    Enter a short message in the **Personal Message** field. This text appears in the body of the invitation email sent to your invitees.
+  </Step>
+  <Step title="Send the invitation">
+    Click **Send Invitation**. Each recipient receives an email with a secure link to access the data room under the role you specified.
+  </Step>
+</Steps>
+
+---
+
+## Managing Invitations
+
+From the **Users** tab inside your data room, you can monitor the status of every invitation you have sent. Each row shows the invitee's email, assigned role, invitation date, and current status.
+
+| Status | Description |
+|---|---|
+| **Pending** | Invitation has been sent but the recipient has not yet accepted it. |
+| **Active** | Recipient accepted the invitation and currently has access to the data room. |
+| **Expired** | The invitation link reached its expiry date before the recipient accepted it. Re-invite to issue a fresh link. |
+| **Revoked** | Access was manually removed by an Admin. The user can no longer enter the data room. |
+
+---
+
+## Revoking Access
+
+<Steps>
+  <Step title="Open the Users tab">
+    Navigate to your data room and select the **Users** tab from the left-hand sidebar.
+  </Step>
+  <Step title="Find the user">
+    Locate the user whose access you want to remove. Use the search bar to filter by name or email address.
+  </Step>
+  <Step title="Open the actions menu">
+    Click the **⋯** (more actions) icon to the right of the user's name.
+  </Step>
+  <Step title="Select Revoke Access">
+    Choose **Revoke Access** from the dropdown menu.
+  </Step>
+  <Step title="Confirm">
+    In the confirmation dialog, click **Revoke** to finalize. The user's status changes to **Revoked** immediately, and they receive an automated email notifying them that their access has been removed.
+  </Step>
+</Steps>
+
+<Warning>
+  Revoking access is immediate. The user's active session will be terminated within 60 seconds.
+</Warning>
+
+---
+
+## Bulk Invitations via CSV
+
+When you need to onboard a large group of reviewers at once, the CSV import workflow saves significant time compared to entering addresses one by one.
+
+<Steps>
+  <Step title="Download the CSV template">
+    Open the **Invite** dialog and click **Download CSV Template**. The template includes pre-formatted columns: `email`, `role`, and `expiry`.
+  </Step>
+  <Step title="Fill in the template">
+    Open the CSV in your spreadsheet application and populate each row with the invitee's email address, their assigned role (`Viewer`, `Commenter`, or `Editor`), and an optional expiry date in `YYYY-MM-DD` format. Leave the `expiry` cell blank to grant indefinite access.
+  </Step>
+  <Step title="Upload the completed file">
+    Back in the **Invite** dialog, click **Upload CSV** and select your completed file. ArgoMedix VDR validates each row and displays a preview before sending.
+  </Step>
+  <Step title="Review and send">
+    Confirm the preview list looks correct, then click **Send Invitations**. All valid rows are dispatched simultaneously.
+  </Step>
+</Steps>
+
+<Info>
+  Rows with invalid email addresses or unrecognized role values are flagged in the validation preview and skipped. Correct those rows and re-upload only the failed entries.
+</Info>

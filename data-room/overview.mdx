@@ -1,0 +1,67 @@
+---
+title: "Understanding Your Data Room Structure and Layout"
+sidebarTitle: "Overview"
+description: "Learn how ArgoMedix VDR organizes your data room, from the dashboard view to folders, documents, and the activity sidebar."
+---
+
+When you open a data room in ArgoMedix VDR, you land on the main dashboard — a unified workspace that surfaces everything you need to manage documents, control access, and monitor reviewer activity. The interface is divided into distinct panels, each designed for a specific part of your workflow, so you can navigate large document sets, review permission assignments, and track actions without switching between separate screens.
+
+## The Data Room Dashboard
+
+The dashboard is organized into four primary areas that work together to give you full visibility and control over your data room.
+
+**Left Sidebar — Folders & Navigation**
+The left sidebar displays your complete folder tree. Click any folder to drill into its contents, collapse branches to reduce visual noise, or right-click to rename, move, or create subfolders. The sidebar also shows folder-level permission indicators so you can see at a glance which folders have restricted access.
+
+**Main Content Area — Document List**
+The central panel lists all files and subfolders within the selected folder. You can switch between list view and grid view, sort by name, date uploaded, or file size, and select multiple items for bulk actions such as moving, downloading, or changing permissions. Document status badges appear inline — indicating whether a file is processing, available, or restricted.
+
+**Right Panel — Activity Feed**
+The right panel streams a real-time log of every action taken in the room: document views, downloads, uploads, permission changes, and user logins. You can filter the feed by user, document, or action type, and export the log for compliance reporting. When you click any entry in the feed, ArgoMedix VDR highlights the related document or folder in the main content area.
+
+**Top Toolbar — Upload, Invite, Search & Settings**
+The toolbar runs across the top of the dashboard and gives you quick access to the most frequent actions. Use **Upload** to add new documents, **Invite** to add users or groups, the **Search** bar to locate any document or user by keyword, and **Settings** to configure room-level options such as watermarking, NDA gates, and download restrictions.
+
+---
+
+## Key Concepts
+
+<CardGroup cols={2}>
+  <Card title="Folders" icon="folder">
+    Organize documents into logical groups that mirror your deal workflow. Folders support nested hierarchies and independent permission assignments at every level.
+  </Card>
+  <Card title="Documents" icon="file">
+    Individual files stored, processed, and tracked in your room. Every document has a unique activity trail, version history, and permission profile.
+  </Card>
+  <Card title="Permissions" icon="lock">
+    Control access at the folder or document level. Grant view-only, download, print, or full-access rights to individual users or entire groups.
+  </Card>
+  <Card title="Activity Feed" icon="clock-rotate-left">
+    Real-time log of every action in the room — who viewed what, when, and for how long. Exportable for audit and compliance purposes.
+  </Card>
+</CardGroup>
+
+---
+
+## Data Room States
+
+A data room in ArgoMedix VDR can exist in one of four states. Understanding these states helps you manage the full lifecycle of a deal room from launch through long-term record retention.
+
+<AccordionGroup>
+  <Accordion title="Active">
+    The data room is fully operational. Invited users can log in, browse folders, view documents, and take any actions permitted by their assigned roles. You can continue uploading documents, adjusting permissions, and inviting new reviewers. This is the default state when a room is created and opened.
+  </Accordion>
+  <Accordion title="Archived">
+    The data room is preserved in a read-only state for compliance and record-keeping. No new documents can be uploaded, no permissions can be changed, and no new users can be invited. Existing users with active access can still view documents if their permissions remain intact, but no write operations are allowed. Use the Archived state after a deal closes to maintain a permanent, tamper-evident record.
+  </Accordion>
+  <Accordion title="Closed">
+    Access to the data room is temporarily suspended. Invited users cannot log in or view any documents until an administrator reopens the room. All documents, permissions, and activity history are preserved exactly as they were when the room was closed. Use this state when a deal is on hold or you need to pause diligence access without permanently altering the room.
+  </Accordion>
+  <Accordion title="Deleted">
+    The data room and all its contents are scheduled for permanent removal. Deletion is a two-step process — the room first enters a 30-day grace period during which an administrator can cancel the deletion. After 30 days, all documents, activity logs, and user data associated with the room are permanently and irreversibly removed.
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  Each data room is completely isolated — users invited to one data room cannot see or access any other data rooms in your workspace.
+</Note>

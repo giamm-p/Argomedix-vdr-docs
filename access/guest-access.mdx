@@ -1,0 +1,74 @@
+---
+title: "Configure Guest Access and NDA Workflows"
+sidebarTitle: "Guest Access"
+description: "Allow external reviewers to access your data room as guests in ArgoMedix VDR, with optional NDA acknowledgment before granting document access."
+---
+
+Guest access allows external parties — investors, lawyers, auditors, and other reviewers — to view documents without creating a full ArgoMedix VDR account. They access the room through a secure link and can be required to read and accept a non-disclosure agreement before any document is shown. This keeps your deal workflow frictionless while maintaining a legally defensible audit trail.
+
+## Enabling Guest Access
+
+<Steps>
+  <Step title="Open Access settings">
+    Navigate to your data room, then go to **Settings → Access**.
+  </Step>
+  <Step title="Toggle Guest Access on">
+    Flip the **Enable Guest Access** toggle to the on position.
+  </Step>
+  <Step title="Set an access expiry date (optional)">
+    Use the **Guest Access Expiry** date picker to automatically disable guest access after a specific date. This is useful for deal timelines with hard closing deadlines.
+  </Step>
+  <Step title="Enable NDA Acceptance (optional)">
+    If you want guests to acknowledge a non-disclosure agreement before viewing documents, toggle **Require NDA Acceptance**. See the [NDA Acknowledgment Workflow](#nda-acknowledgment-workflow) section below for configuration steps.
+  </Step>
+  <Step title="Save your settings">
+    Click **Save**. Guest access is now active and a shareable link becomes available under **Users → Share Link**.
+  </Step>
+</Steps>
+
+---
+
+## NDA Acknowledgment Workflow
+
+When **Require NDA Acceptance** is enabled, guests encounter a full-screen NDA gate immediately after following the access link. They cannot view or interact with any document until they accept.
+
+<Steps>
+  <Step title="Enable the NDA gate">
+    In **Settings → Access**, toggle **Require NDA Acceptance** to on.
+  </Step>
+  <Step title="Provide your NDA document">
+    Choose one of two options:
+    - **Upload a PDF** — click **Upload NDA Document** and select a PDF from your computer. The PDF is displayed in the built-in viewer on the acceptance screen.
+    - **Use the built-in template** — click **Use Built-in Template** to populate a standard mutual NDA pre-filled with your organization's name and the current date. You can edit the template text before saving.
+  </Step>
+  <Step title="Guests read and accept">
+    When a guest opens the link, they are presented with the NDA document and an **Accept** button. They must scroll to the end of the document before the button becomes active.
+  </Step>
+  <Step title="Acceptance is recorded">
+    Upon clicking **Accept**, the guest's name, email address, IP address, and a precise timestamp are written to the data room's **Audit Trail**. The guest is then granted access to the document index.
+  </Step>
+</Steps>
+
+<Note>
+  NDA acceptances are legally recorded in the audit trail with the guest's name, email, IP address, and timestamp. Download the audit trail from **Settings → Audit Trail → Export** to retain records for your legal files.
+</Note>
+
+---
+
+## Shareable Access Links
+
+Rather than sending individual email invitations, you can generate a single shareable link that any guest can use to enter the data room.
+
+**To generate a shareable link:**
+
+1. Go to **Users → Share Link** inside your data room.
+2. Configure the link options:
+   - **Link Expiry** — set a date after which the link becomes inactive.
+   - **Require Email Verification** — when enabled, guests must verify their email address before gaining access. This ensures you can identify each person who uses the link even if it is forwarded.
+3. Click **Generate Link** and copy the URL to share it via email, messaging, or your deal platform.
+
+You can revoke a shareable link at any time from **Users → Share Link → Revoke Link**. Revoking the link immediately prevents new guests from entering, but does not terminate sessions that are already active.
+
+<Warning>
+  Anyone with the link can access the data room (subject to NDA if enabled). Treat shareable links like passwords — do not post them in public channels, shared inboxes, or unsecured communications.
+</Warning>

@@ -1,0 +1,63 @@
+---
+title: "Download and Verify the Data Room Audit Trail"
+sidebarTitle: "Audit Trail"
+description: "The ArgoMedix VDR audit trail provides a tamper-evident, court-admissible record of all actions taken in your data room for compliance and legal purposes."
+---
+
+The audit trail is a tamper-evident log designed for compliance, legal discovery, and regulatory review — it captures every action with cryptographic verification so records cannot be altered after the fact. Unlike the Activity Log, which is optimized for day-to-day monitoring, the audit trail is a sealed, verifiable record intended for use in formal proceedings, regulatory submissions, and long-term retention.
+
+## What the Audit Trail Records
+
+The audit trail captures all events recorded in the Activity Log, and extends that record with the following additional fields required for compliance and legal use:
+
+- **User IP addresses and geolocation** — the network origin of every session
+- **Browser and OS details** — the client environment used to access the data room
+- **Session start and end times** — the exact duration of each login session
+- **NDA acceptance records** — full legal timestamps and user identity details for every NDA signed
+- **Admin-level actions** — a complete log of all permission changes, settings updates, and administrative operations performed by data room owners and admins
+
+Every entry in the audit trail is written once and cryptographically sealed, ensuring that no action — including those taken by ArgoMedix VDR administrators — can modify a record after it is created.
+
+## Downloading the Audit Trail
+
+<Steps>
+  <Step title="Open Audit Trail Settings">
+    Open the data room and click **Settings** in the left sidebar, then select **Audit Trail** from the settings menu.
+  </Step>
+  <Step title="Select a Date Range">
+    Use the date range picker to select the period you want to export, or choose **All Time** to download the complete audit trail for the data room.
+  </Step>
+  <Step title="Click Download Audit Trail">
+    Click the **Download Audit Trail** button to initiate the export.
+  </Step>
+  <Step title="Choose Your Format">
+    Select your preferred download format:
+    - **PDF** — A digitally signed, tamper-evident report formatted for legal and regulatory use.
+    - **CSV** — Raw event data in spreadsheet format for analysis or import into compliance tools.
+  </Step>
+</Steps>
+
+## Audit Trail Integrity
+
+PDF audit trail downloads are digitally signed by ArgoMedix VDR at the moment of generation. Each downloaded file includes a unique **verification code** embedded in the document footer.
+
+To confirm the authenticity of any audit trail PDF, visit **[app.argomedix.com/verify](https://app.argomedix.com/verify)** and enter the verification code. The system will confirm whether the document is genuine and unmodified, and display the original generation timestamp.
+
+This verification mechanism means that any third party — a regulator, auditor, or court — can independently confirm that the audit trail you provide is the original, unaltered record produced by ArgoMedix VDR.
+
+<Note>
+  Audit trail records are retained for 7 years by default, in accordance with standard compliance requirements for due diligence and clinical data workflows.
+</Note>
+
+## Using the Audit Trail for Compliance
+
+The ArgoMedix VDR audit trail is designed to satisfy the evidentiary and documentation requirements across a range of regulated workflows:
+
+- **SEC/FINRA review** — Demonstrate controlled document access and investor communications during a financial deal audit.
+- **FDA regulatory submissions** — Provide a verifiable record of clinical trial data sharing and access to investigational documents.
+- **GDPR data access records** — Document who accessed what personal data, when, and from where to satisfy data subject access and accountability obligations.
+- **Litigation and legal discovery** — Produce a court-ready record of all data room activity, including who reviewed which documents and when.
+
+<Info>
+  For legal proceedings, always use the signed PDF format — it includes the cryptographic signature chain required for court admissibility.
+</Info>

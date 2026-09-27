@@ -1,0 +1,136 @@
+---
+title: "Troubleshoot Common Issues in ArgoMedix VDR"
+sidebarTitle: "Troubleshooting"
+description: "Fix common problems with document viewing, invitations, uploads, and account access in ArgoMedix VDR with these step-by-step solutions."
+---
+
+If you encounter an issue with ArgoMedix VDR, this page covers the most common problems and how to resolve them quickly. If you don't find a solution here, [contact the support team](/support/contact) for further assistance.
+
+## Document Viewer Issues
+
+<AccordionGroup>
+  <Accordion title="Documents are loading slowly or not displaying">
+    Work through the following steps in order:
+
+    1. Check your internet connection and ensure you have a stable signal.
+    2. Refresh the page using **Ctrl+Shift+R** (Windows/Linux) or **Cmd+Shift+R** (macOS) to perform a hard reload and clear cached assets.
+    3. Verify you're using a supported browser:
+       - Chrome 100+
+       - Firefox 100+
+       - Safari 15+
+       - Edge 100+
+    4. If you're viewing a large PDF (100+ pages), allow up to 30 seconds for the document to fully render.
+
+    <Tip>
+      Switching to Google Chrome typically provides the best document rendering performance in ArgoMedix VDR.
+    </Tip>
+  </Accordion>
+
+  <Accordion title="I see a blank page when viewing a document">
+    The document may still be processing after a recent upload. Wait 2–3 minutes, then refresh the page and try again. Processing times vary based on file size and complexity.
+
+    If the blank page persists after 10 minutes, delete the file and re-upload it. If the problem continues after a second upload, [contact support](/support/contact) with the file name and data room details.
+  </Accordion>
+
+  <Accordion title="Watermarks are covering the document content">
+    You can reduce the visual impact of watermarks without disabling them entirely:
+
+    1. Go to **Data Room Settings → Security → Watermarking**.
+    2. Reduce the **Opacity** slider to between **15–20%** for a less intrusive appearance.
+    3. Click **Save** to apply the change.
+
+    <Note>
+      Watermark settings apply to all documents in the room. Disabling watermarks entirely may affect your audit trail and security posture.
+    </Note>
+  </Accordion>
+</AccordionGroup>
+
+## Invitation & Access Issues
+
+<AccordionGroup>
+  <Accordion title="Reviewer says they didn't receive the invitation email">
+    Try the following steps:
+
+    1. Ask the reviewer to check their **spam or junk mail** folder.
+    2. Ask them to whitelist **notifications@argomedix.com** in their email client.
+    3. Resend the invitation from **Users → ⋯ → Resend Invitation**.
+    4. If the email still doesn't arrive, try inviting an alternative email address for that reviewer.
+
+    <Note>
+      Some corporate email servers apply aggressive filtering policies. If a reviewer's work email is blocked, a personal address is a reliable fallback while you investigate with their IT team.
+    </Note>
+  </Accordion>
+
+  <Accordion title="Reviewer gets 'Access Denied' when clicking the invitation link">
+    This is most commonly caused by an expired invitation link. By default, invitation links expire after **7 days**.
+
+    To resolve this:
+
+    1. Go to the **Users** tab in your data room.
+    2. Find the affected user and click **⋯ → Resend Invitation** to issue a fresh link.
+    3. Also verify the user's status in the **Users** tab — confirm their access has not been accidentally revoked.
+  </Accordion>
+
+  <Accordion title="I accidentally revoked a user's access">
+    You can restore access for a revoked user at any time:
+
+    <Steps>
+      <Step title="Open the Users tab">
+        Navigate to your data room and click the **Users** tab. Revoked users appear with a **Revoked** status badge.
+      </Step>
+      <Step title="Open the user menu">
+        Click the **⋯** menu next to the revoked user's name.
+      </Step>
+      <Step title="Restore access">
+        Select **Restore Access**, choose the appropriate role from the dropdown, and click **Confirm**.
+      </Step>
+    </Steps>
+
+    The user will receive an email notification confirming their access has been reinstated.
+  </Accordion>
+</AccordionGroup>
+
+## Upload Issues
+
+<AccordionGroup>
+  <Accordion title="Upload is stuck or failing">
+    Check the following before retrying:
+
+    - Confirm the file is within the size limit: **500 MB** for individual documents, **2 GB** for ZIP archives.
+    - Verify your internet connection is stable — upload failures are most often caused by connection drops mid-transfer.
+    - For large files, use a **wired (Ethernet) connection** instead of Wi-Fi.
+    - If uploading multiple files at once, try uploading **one file at a time** to identify which file is causing the failure.
+
+    <Warning>
+      Do not close the browser tab while an upload is in progress. Doing so will cancel the upload and you will need to start again.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="My file type is not supported">
+    If ArgoMedix VDR does not accept your file type, convert the file to **PDF** before uploading — PDF is universally supported and provides the best viewing experience for reviewers.
+
+    Note that executable files — including **.exe**, **.sh**, and **.bat** — are permanently blocked for security reasons and cannot be uploaded in any format.
+  </Accordion>
+</AccordionGroup>
+
+## Account & Billing Issues
+
+<AccordionGroup>
+  <Accordion title="I can't access Workspace Settings">
+    Only users with the **Admin** role can access Workspace Settings. If you need access, ask your workspace Admin to grant you Admin rights from **Workspace Settings → Team Members**.
+
+    If you are the account owner and still cannot access Workspace Settings, [contact support](/support/contact) and include your account email.
+  </Accordion>
+
+  <Accordion title="My subscription payment failed">
+    To resolve a failed payment:
+
+    1. Go to **Billing → Payment Methods** in your Workspace Settings.
+    2. Update your card details or add a new payment method.
+    3. Click **Retry Payment** to attempt the charge again immediately.
+
+    <Warning>
+      Failed payments trigger a **7-day grace period** before your account is suspended. Update your payment information promptly to avoid service interruption.
+    </Warning>
+  </Accordion>
+</AccordionGroup>

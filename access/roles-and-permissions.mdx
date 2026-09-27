@@ -1,0 +1,80 @@
+---
+title: "User Roles and Permissions in ArgoMedix VDR"
+sidebarTitle: "Roles & Permissions"
+description: "Understand the built-in roles in ArgoMedix VDR — Viewer, Commenter, Editor, and Admin — and the specific actions each role can perform."
+---
+
+ArgoMedix VDR uses role-based access control to ensure reviewers only see and do exactly what they are authorized for. Roles are assigned at the data room level and provide a sensible default for every document and folder inside that room — but Admins can override them at the folder or document level for fine-grained control over sensitive material.
+
+## Built-in Roles
+
+The four built-in roles cover the most common use cases across deal teams, legal counsel, investors, and internal stakeholders. Review the capability matrix below before assigning roles to invitees.
+
+| Role | Can View | Can Comment | Can Upload / Edit | Can Download | Can Invite Others | Can Change Settings |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Viewer** | ✓ | ✗ | ✗ | Depends on settings | ✗ | ✗ |
+| **Commenter** | ✓ | ✓ | ✗ | Depends on settings | ✗ | ✗ |
+| **Editor** | ✓ | ✓ | ✓ | ✓ | ✓ (for roles below Editor) | ✗ |
+| **Admin** | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+
+<Info>
+  Download access for **Viewer** and **Commenter** roles is controlled separately in your data room's **Security** settings. See [Download & Print Controls](#download--print-controls) below.
+</Info>
+
+---
+
+## Folder-Level Permissions
+
+Admins can override the data room–level role for any folder, giving specific users a different level of access to that folder alone. This is useful for hiding in-progress materials or granting targeted edit access without elevating a user's entire data room role.
+
+**To manage folder-level permissions:**
+
+1. Right-click the folder in the document index.
+2. Select **Manage Permissions** from the context menu.
+3. In the **Folder Permissions** panel, search for a user by name or email.
+4. Select the access level you want that user to have for this folder: **No Access**, **Viewer**, **Commenter**, or **Editor**.
+5. Click **Save**. The override applies immediately.
+
+**Common use cases:**
+
+<CardGroup cols={2}>
+  <Card title="Hide folders until NDAs are signed" icon="eye-slash">
+    Set a folder to **No Access** for all Viewers, then remove the restriction once NDAs are collected and countersigned.
+  </Card>
+  <Card title="Targeted Editor access" icon="pen-to-square">
+    Give a specific legal reviewer **Editor** access to a single subfolder (e.g., contract redlines) without promoting their overall role.
+  </Card>
+</CardGroup>
+
+---
+
+## Document-Level Permissions
+
+Document-level permissions follow the same logic as folder-level permissions but apply to a single file rather than an entire folder. This is ideal when one document within an otherwise accessible folder needs tighter controls.
+
+**To manage document-level permissions:**
+
+1. Right-click the document in the document index.
+2. Select **Manage Permissions** from the context menu.
+3. Assign per-user access levels in the **Document Permissions** panel.
+4. Click **Save**.
+
+<Note>
+  Document-level permissions take precedence over folder-level and data room–level role assignments. If a user has **No Access** set on a specific file, they will not see that file even if they have **Editor** access to the parent folder.
+</Note>
+
+---
+
+## Download & Print Controls
+
+Independently of a user's role, Admins can toggle the following controls at the data room level or on a per-folder basis. These settings are found in **Data Room Settings → Security** (data room–wide) or in the **Folder Settings** panel (per folder).
+
+| Control | What It Does |
+|---|---|
+| **Allow Download** | Permits users with eligible roles to download original files. When disabled, only the in-browser viewer is available. |
+| **Allow Print** | Enables the browser print function for viewed documents. When disabled, the print option is hidden and keyboard shortcuts are blocked. |
+| **Require NDA Before Accessing** | Forces all users to accept a configured NDA document before they can open any file. See [Guest Access](/access/guest-access) for NDA configuration steps. |
+
+<Tip>
+  Use folder-level permissions to create a "staged" due diligence experience — open up sensitive folders only after initial NDAs are signed.
+</Tip>

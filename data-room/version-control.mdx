@@ -1,0 +1,63 @@
+---
+title: "Manage Document Versions and Revision History"
+sidebarTitle: "Version Control"
+description: "Upload new versions of documents in ArgoMedix VDR while preserving the full revision history, view changes, and restore previous versions."
+---
+
+Version control in ArgoMedix VDR lets you keep your data room current as documents evolve throughout a deal — without discarding the history that auditors, counsel, and deal teams depend on. When you upload a new version of a document, reviewers automatically see the latest file the next time they open it, while you retain access to every prior version in the document's revision history. This means you never have to delete and re-upload a file to push an update, and you never lose visibility into what a document said at any earlier point in the process.
+
+## Uploading a New Version
+
+<Steps>
+  <Step title="Locate the document">
+    In the main content area, find the document you want to update. You can browse to it through the folder tree in the left sidebar or use the **Search** bar in the top toolbar to find it by name.
+  </Step>
+  <Step title="Open the version upload menu">
+    Right-click the document name to open the context menu, then select **Upload New Version**. This opens the version upload dialog without navigating away from the current folder.
+  </Step>
+  <Step title="Choose the updated file">
+    Click **Choose File** in the dialog and select the updated document from your computer. The new file must match the same general document type as the original — for example, upload a PDF to replace a PDF — though the file name does not need to match.
+  </Step>
+  <Step title="Add a version note">
+    Optionally, enter a short version note in the **Note** field to describe what changed in this revision (for example, "Updated Q3 financials" or "Revised per counsel comments — 14 Nov"). Version notes appear in the document's history tab and help everyone on the team identify the right version quickly.
+  </Step>
+  <Step title="Upload the new version">
+    Click **Upload**. ArgoMedix VDR replaces the current document with the new version and moves the previous version into the document's revision history. Reviewers who open the document from this point forward will see the new version automatically.
+  </Step>
+</Steps>
+
+---
+
+## Viewing Version History
+
+To review all versions of a document, click the document name in the file list to open its detail pane, then click the **History** tab in the right panel. The version history table lists every revision from newest to oldest. For each version you can see:
+
+- **Version number** — sequentially assigned, starting at v1 for the original upload
+- **Upload date** — the date and time the version was uploaded, displayed in your local timezone
+- **Uploaded by** — the name and email of the team member who uploaded that version
+- **File size** — the size of that specific version's source file
+- **Version note** — any descriptive note added at the time of upload
+
+Click any row in the history table to preview that version in the built-in document viewer without changing which version is live for reviewers.
+
+---
+
+## Restoring a Previous Version
+
+If you need to roll back a document to an earlier state, open the document's **History** tab and click **Restore** next to the version you want to reinstate. A confirmation dialog appears summarizing which version you are restoring and the impact on the current version. Confirm the action to proceed.
+
+Once restored, the selected version becomes the new current version — it is what all reviewers will see when they next open the document. The version that was previously current is not lost; it is logged in the history table as a regular entry so the full revision chain remains intact and auditable.
+
+<Tip>
+  Add descriptive version notes (e.g., "Board-approved Q3 2024 financials") to make it easy to identify the right version at a glance.
+</Tip>
+
+---
+
+## Version Notifications
+
+When you upload a new version of a document, ArgoMedix VDR can optionally send an email notification to invited reviewers who have already viewed that document — alerting them that updated content is available. This keeps stakeholders informed without requiring you to send manual follow-up messages.
+
+Version notifications are configured per upload directly in the **version upload dialog**: before you click **Upload**, toggle the **Notify reviewers** option on or off. You can also choose to notify all invited users regardless of whether they have viewed the document previously — useful when a revision is significant enough that everyone should be aware of the change.
+
+Room-level default behavior for version notifications can be set in **Settings → Notifications** by an administrator, so your team doesn't have to remember to toggle the option on every upload.
