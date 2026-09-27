@@ -1,88 +1,116 @@
 ---
-title: "ArgoMedix VDR Workspace Settings and Configuration"
+title: "Configure Workspace Settings in Argomedix VDR"
 sidebarTitle: "Workspace Settings"
-description: "Manage your organization name, logo, team members, SSO configuration, and default data room settings from the ArgoMedix VDR workspace settings panel."
+description: "Manage your data room name, logo, default permissions, watermarking, storage, and owner-only actions like export, empty, and scheduled deletion."
 ---
 
-Workspace settings control the global configuration for your organization's ArgoMedix VDR account. Any changes you make here apply across all data rooms unless a specific data room overrides them at the room level — making this the right place to establish organization-wide defaults, branding, and security policies before you begin creating rooms.
+The Workspace Settings modal lets you control how your Argomedix VDR data room looks and behaves. Open it from the top navigation to rename your room, set a company logo, configure default sharing rules, and perform owner-only actions.
 
-## Accessing Workspace Settings
+## Open Workspace Settings
 
-To open workspace settings, click your **organization name** in the top-left dropdown menu and select **Workspace Settings**. Only users with the **Admin** role can view or modify workspace settings. If you do not see this option, contact your organization's Admin to request elevated access.
+1. Click your workspace name or the settings icon in the top navigation bar.
+2. The modal opens with tabs: **General**, **Appearance**, **Billing**, **Team**, and **Customization**.
+
+<Note>
+  Some settings are read-only for admins. Only the workspace owner can change the data room name, logo, billing tier, and danger-zone actions.
+</Note>
 
 ## General Settings
 
-The **General** tab lets you configure the foundational details of your ArgoMedix VDR organization account.
+### Rename the Data Room
 
-| Field | Description |
-|---|---|
-| **Organization Name** | The display name shown across the platform and in outbound communications. |
-| **Organization Logo** | Uploaded logo appears in email invitations and the reviewer portal. Recommended size: 200×60 px, PNG or SVG. |
-| **Default Timezone** | Sets the timezone used for activity timestamps and scheduled events. |
-| **Default Language** | Sets the language for the platform UI for new workspace members. |
-| **Date Format** | Choose from MM/DD/YYYY, DD/MM/YYYY, or YYYY-MM-DD. |
+1. In the **General** tab, find the **Data Room Name** field.
+2. Enter a new name and click **Save**.
 
-## Team Management
+### View Storage Usage
 
-The **Team** tab gives you a central view of every member in your workspace and lets you manage access at the organization level.
+Your storage bar shows the exact megabytes used and the percentage of your tier quota.
 
-<Steps>
-  <Step title="View workspace members">
-    Open **Workspace Settings → Team** to see all current members, their email addresses, assigned roles, and join dates.
-  </Step>
-  <Step title="Invite a new member">
-    Click **Invite Member**, enter the recipient's email address, assign a workspace role, then click **Send Invite**. The invitee receives an email with a secure join link.
-  </Step>
-  <Step title="Change a member's role">
-    Find the member in the list, click the role badge next to their name, and select a new role from the dropdown. Changes take effect immediately.
-  </Step>
-  <Step title="Remove a member">
-    Click the **⋯** menu next to the member's name and select **Remove from Workspace**. Confirm the action in the dialog that appears.
-  </Step>
-</Steps>
+- **Seed tier:** 1 GB storage
+- **Scale tier:** 10 GB storage
 
-<Note>
-  Removing a workspace member does not revoke their access to individual data rooms — revoke data room access separately from the data room's **Users** tab.
-</Note>
+The bar turns amber above 60% and red above 85%.
 
-## Single Sign-On (SSO)
+### Export Data Room Structure
 
-Enterprise plan customers can configure SAML 2.0 SSO so that team members authenticate through your existing Identity Provider (IdP) — such as Okta, Azure AD, or Google Workspace — instead of managing a separate ArgoMedix VDR password.
+Click **Export CSV** to download a spreadsheet index of every folder, subfolder, and document with its index order, size, upload date, and parent folder. This is useful for offline due diligence checklists.
 
-<Steps>
-  <Step title="Open the SSO configuration panel">
-    Navigate to **Workspace Settings → Security → Single Sign-On**.
-  </Step>
-  <Step title="Enter your IdP metadata URL">
-    Paste the metadata URL provided by your Identity Provider into the **IdP Metadata URL** field. ArgoMedix VDR will automatically parse your entity ID, SSO URL, and signing certificate.
-  </Step>
-  <Step title="Test the connection">
-    Click **Test Connection** to verify that ArgoMedix VDR can communicate with your IdP. Resolve any errors before proceeding.
-  </Step>
-  <Step title="Enable SSO">
-    Once the test passes, toggle **Enable SSO** to activate. All workspace members will be required to authenticate via your IdP on their next login.
-  </Step>
-</Steps>
+### Leave the Workspace (Admin only)
 
-<Warning>
-  SSO configuration requires an **Enterprise plan**. If you are on a Starter or Business plan, upgrade your subscription before attempting to configure SSO.
-</Warning>
+Admins who are not the owner can leave the workspace at any time from the General tab. Owners must transfer ownership first before leaving.
 
-## Default Data Room Settings
+## Appearance Settings
 
-The settings below apply automatically to every new data room you create. Individual data rooms can override any of these defaults in their own room-level settings.
+### Upload a Company Logo
 
-<AccordionGroup>
-  <Accordion title="Watermarking" icon="droplet">
-    When enabled, ArgoMedix VDR overlays a dynamic watermark — containing the viewer's email address and timestamp — on all documents viewed in the browser. **Default: On.**
-  </Accordion>
-  <Accordion title="Allow Downloads" icon="arrow-down-to-line">
-    Controls whether reviewers can download original files from a data room. Disable this to enforce view-only access across rooms. **Default: Off.**
-  </Accordion>
-  <Accordion title="Session Timeout" icon="clock">
-    Automatically logs out inactive reviewer sessions. Choose from **15 minutes**, **30 minutes**, **1 hour**, **4 hours**, or **Never**. **Default: 30 minutes.**
-  </Accordion>
-  <Accordion title="NDA Required" icon="file-signature">
-    When enabled, reviewers must accept a Non-Disclosure Agreement before they can access any documents in the room. **Default: Off.**
-  </Accordion>
-</AccordionGroup>
+1. Go to the **Appearance** tab.
+2. Click **Upload** and select a PNG, JPG, SVG, or WEBP file (max 2 MB).
+3. Check the **Display your company logo on the header** checkbox to make it visible to all visitors.
+4. Click **Remove** to delete the logo and hide it.
+
+## Customization Settings
+
+### Default Visibility Permission
+
+Choose what happens when an admin uploads or moves a folder or document:
+
+- **Keep current settings (Default):** Retains the item's existing explicit permissions. When copying or moving, it keeps the source permissions.
+- **Inherit destination settings:** Removes any explicit overrides so the item follows the destination folder's permissions.
+- **Set to hidden:** Explicitly hides the item from all guest groups by default.
+
+### Default Watermark on Files
+
+Toggle whether newly uploaded files are watermarked by default:
+
+- **Watermarked Files**
+- **Original files (No Watermark - Default)**
+
+### Show Empty Folders
+
+Enable the checkbox to display empty folders in the data room and on the Permissions page. This is useful when you are building out the taxonomy before uploading documents.
+
+## Billing Settings
+
+### Current Plan
+
+The **Billing** tab shows your active tier:
+
+- **Seed:** 1 GB storage, 1 workspace admin
+- **Scale:** 10 GB storage, up to 10 workspace admins, unlimited guests
+
+### Upgrade to Scale
+
+If you are on Seed, click **Upgrade to Scale**. The upgrade takes effect immediately.
+
+### Downgrade to Seed
+
+If you are on Scale, click **Downgrade to Seed**. You can only downgrade if you are within Seed limits:
+
+- 1 admin or fewer (including the owner)
+- 1 GB of storage or less
+
+If you exceed either limit, a modal lists exactly how many admins you must remove or how much storage you must free before downgrading.
+
+## Danger Zone (Owner Only)
+
+These actions appear in the General tab and are restricted to the workspace owner.
+
+### Remove Placeholders
+
+Click **Remove Placeholders** to permanently delete all placeholder files and empty placeholder folders. Folders that contain uploaded documents are preserved.
+
+### Transfer Ownership
+
+1. Select an active admin from the dropdown.
+2. Click **Transfer**.
+3. Confirm by typing the data room name.
+
+You will lose owner privileges and become an admin. Only the new owner can manage billing, empty the data room, or schedule deletion.
+
+### Empty Data Room
+
+Click **Delete Data Room** to permanently remove every document, folder, and share link. Before confirming, you can check an option to **Revoke access for all external Guests**, which deactivates every guest while keeping their activity in the audit log.
+
+### Schedule Deletion
+
+Click **Schedule Deletion** to start a 7-day countdown. At the end of the countdown, the workspace and all its contents are permanently deleted. While the countdown is active, the General tab shows the scheduled date and offers a **Cancel Deletion** button to stop it.

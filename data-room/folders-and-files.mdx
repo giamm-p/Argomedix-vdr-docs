@@ -1,76 +1,139 @@
 ---
-title: "Organize Documents with Folders and File Management"
+title: "Manage Folders and Files in Your Argomedix VDR"
 sidebarTitle: "Folders & Files"
-description: "Create a clear folder structure in your ArgoMedix VDR data room to help reviewers navigate documents quickly and apply targeted permissions."
+description: "Create, organize, reorder, and manage folders and documents in your Argomedix data room. Learn about placeholders, drag and drop, and the show empty folders setting."
 ---
 
-A well-organized folder structure is the foundation of a smooth reviewer experience. When investors, counsel, or counterparties open your data room, the folder hierarchy is the first thing they see — a clear, logical layout helps them find what they need quickly and signals that your team manages diligence with precision. Beyond navigation, folders are also the primary unit for permission management in ArgoMedix VDR: you can grant or restrict access at the folder level, making it straightforward to expose only relevant sections to specific reviewer groups without configuring permissions on every individual file.
+Argomedix VDR gives you full control over how folders and documents are organized inside your data room. You can create folders, rename items, move or copy them, reorder by dragging and dropping, and clean up onboarding placeholders when you are ready.
 
-## Creating Folders
+## Folder actions
 
-<Steps>
-  <Step title="Open the New Folder dialog">
-    Click **+ New Folder** in the left sidebar (next to the parent folder where you want the new folder to appear) or click the same button in the main content area toolbar when you have a folder selected. Both options create a folder in the currently active location.
-  </Step>
-  <Step title="Enter a folder name">
-    Type a descriptive name for the folder. Use a consistent naming convention across your room — numbered prefixes (e.g., `01 –`, `02 –`) keep folders in a predictable order and make the hierarchy easier to scan.
-  </Step>
-  <Step title="Add an optional description">
-    Expand the **Description** field to add context for reviewers. The description appears as a tooltip when users hover over the folder name in the sidebar, helping them confirm they're in the right place before opening it.
-  </Step>
-  <Step title="Create the folder">
-    Click **Create**. The folder appears immediately in the sidebar and main content area, ready for documents or subfolders to be added.
-  </Step>
-</Steps>
+You can perform the following actions on any folder from the Data Room view. Right-click a folder or open its action menu to see the available options.
 
----
+### Create a folder
 
-## Best Practices for Folder Structure
+1. Open the Data Room tab.
+2. Click **Add New Folder** at the top of the folder list.
+3. Enter a folder name and confirm.
 
-<Tip>
-  Number your top-level folders so they stay in a meaningful order regardless of alphabetical sorting. Use consistent naming patterns (e.g., title case, em-dash separators) so your room looks professional to reviewers from the moment they log in.
-</Tip>
+The new folder is placed at the end of the list in the current location. If you create it inside another folder, it becomes a subfolder.
 
-Keep folder depth to three levels or fewer when possible. Deeply nested structures force reviewers to click through many layers to reach documents, which slows down diligence. Group documents by functional area rather than by document type alone — reviewers think in terms of topics (financials, IP, HR) not formats (PDFs, spreadsheets).
+### Rename a folder
 
-Below is a suggested folder structure for a typical Series A due diligence room. You can adapt this template to match your deal's specific requirements.
+1. Open the action menu on the folder you want to rename.
+2. Select **Rename**.
+3. Type the new name and confirm.
 
-```text
-Project Falcon – Series A/
-├── 01 – Corporate Documents/
-│   ├── Certificate of Incorporation
-│   └── Cap Table
-├── 02 – Financial Statements/
-│   ├── P&L Statements
-│   └── Balance Sheets
-├── 03 – Intellectual Property/
-│   └── Patent Filings
-├── 04 – Contracts & Agreements/
-│   └── Customer Contracts
-└── 05 – Team & HR/
-    └── Org Chart
-```
+The change is saved immediately and logged in the audit trail.
 
----
+### Move a folder
 
-## Moving and Renaming
+1. Open the action menu on the folder and select **Move**.
+2. Choose the destination folder, or select the workspace root to move it to the top level.
 
-Right-click any file or folder in the main content area or sidebar to open the context menu. From there you can:
+Argomedix prevents invalid moves: you cannot move a folder into itself or into one of its own descendants. When a folder is moved, its permissions are recalculated based on the destination.
 
-- **Rename** — edit the name inline. Press **Enter** to confirm or **Escape** to cancel.
-- **Move** — open the destination picker and select the target folder. The item and all its contents move instantly.
-- **Copy** — create a duplicate in another folder while leaving the original in place. Copied files receive a new activity trail independent of the original.
+### Copy a folder
 
-You can also move files and folders using **drag-and-drop**: click and hold any item in the main content area, drag it over the target folder in the left sidebar until the folder highlights, then release to drop. Drag-and-drop supports moving multiple items at once — hold **Shift** or **Ctrl / ⌘** to select several items before dragging.
+1. Open the action menu on the folder and select **Copy**.
+2. Choose the destination folder or the workspace root.
 
----
+A new folder is created with the same name plus "(Copy)". Permissions are applied based on the destination location. If your workspace is near its storage limit, the copy may be blocked and you will see a storage limit message.
 
-## Deleting Files
+### Delete a folder
 
-To delete one or more files, select them in the main content area by clicking the checkbox to the left of each file name, then click the **Delete** button (trash icon) in the toolbar. You can also right-click a single file and choose **Delete** from the context menu.
+1. Open the action menu on the folder and select **Delete Folder**.
+2. Confirm the deletion in the dialog.
 
-Deleted files are not immediately removed from your data room. They move to the **Trash**, which is accessible from the bottom of the left sidebar. Files remain in Trash for **30 days**, during which an administrator can restore them to their original location (or a new folder) at any time. After 30 days, files are permanently and irreversibly deleted.
+Deleting a folder removes it and all of its contents, including subfolders and documents. This action is permanent and is recorded in the audit log.
 
-<Warning>
-  Deleting a folder removes all documents inside it. Move documents to a new location before deleting a folder you no longer need.
-</Warning>
+## Document actions
+
+Documents support the same core actions as folders, plus placeholder-specific workflows.
+
+### Rename a document
+
+1. Open the action menu on the document and select **Rename**.
+2. Enter the new file name and confirm.
+
+The original file name is preserved in the audit trail for reference.
+
+### Move a document
+
+1. Open the action menu on the document and select **Move**.
+2. Choose the destination folder.
+
+The document is reassigned to the new folder and its permissions are updated based on the destination.
+
+### Copy a document
+
+1. Open the action menu on the document and select **Copy**.
+2. Choose the destination folder.
+
+A duplicate document is created with "(Copy)" added to the file name. The duplicate shares the same underlying file and does not consume additional storage. If you are near your tier limit, the copy may be blocked.
+
+### Delete a document
+
+1. Open the action menu on the document and select **Delete Document**.
+2. Confirm the deletion.
+
+The document is removed permanently and the action is logged.
+
+## Reorder folders and documents
+
+Argomedix supports drag-and-drop reordering for both folders and documents.
+
+- **Folders**: Drag a folder up or down in the folder tree to change its position. You can also drag folders between parent folders to move and reorder them at the same time.
+- **Documents**: Inside any folder, drag documents to rearrange their order.
+
+When you drop an item, Argomedix automatically updates the `index_order` values for all siblings so the sequence remains consistent. The system also detects numeric prefixes in document file names (for example, `1. Introduction`, `2. Financials`) and renumbers them automatically after reordering or when placeholders are removed.
+
+## Placeholders
+
+During onboarding, Argomedix seeds your data room with a folder taxonomy and placeholder documents. Placeholders are marked as **GHOST** status and serve as a checklist for the files you still need to upload.
+
+### Replace a placeholder
+
+1. Locate the placeholder document in the folder.
+2. Drag a file from your computer and drop it directly onto the placeholder card.
+3. The upload replaces the placeholder and the new file inherits the placeholder's index position.
+
+### Remove a single placeholder
+
+1. Open the action menu on the placeholder document.
+2. Select **Remove Placeholder**.
+3. Confirm the removal.
+
+When a placeholder is removed, the remaining documents in that folder are automatically reindexed. If their file names start with a numeric prefix, the prefix is updated to match the new sequence.
+
+### Remove all placeholders
+
+If you want to clean up the entire data room at once, an owner can remove every placeholder and empty placeholder folder in a single action.
+
+1. Go to **Workspace Settings**.
+2. Click **Remove All Placeholders**.
+3. Confirm in the dialog.
+
+This action:
+
+- Deletes every placeholder document (GHOST status)
+- Deletes every empty folder that contains only placeholders
+- Clears placeholder comments and descriptions from uploaded documents
+- Reindexes all remaining folders and documents
+- Updates numeric prefixes in file names to match the new order
+
+This action is permanent and cannot be undone. It is logged in the audit trail as a workspace settings change.
+
+## Show empty folders
+
+By default, empty folders are hidden from guests in the data room. You can change this behavior from **Workspace Settings**.
+
+1. Open **Workspace Settings**.
+2. Find the **Show Empty Folders** option.
+3. Toggle it on or off.
+
+When enabled, guests will see folders even if they contain no documents. When disabled, empty folders are hidden from the guest view but remain visible to admins and owners for management purposes. The change is saved immediately and logged in the audit trail.
+
+## Storage limits during copy operations
+
+Both folder copy and document copy check your workspace storage quota. If the action would exceed your tier limit, the operation is blocked and you receive a `STORAGE_LIMIT_EXCEEDED` response. To continue, free up space or upgrade your plan. Quota notifications are sent at 80% and 90% usage.

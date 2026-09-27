@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "almond",
-  "name": "ArgoMedix VDR",
+  "name": "Argomedix VDR",
   "colors": {
-    "primary": "#ef7025",
-    "light": "#eec9bc",
-    "dark": "#4fa1ab"
+    "primary": "#0f766e",
+    "light": "#2dd4bf",
+    "dark": "#0f766e"
   },
   "favicon": "/favicon.svg",
   "logo": {
@@ -17,12 +17,16 @@
       {
         "label": "Support",
         "href": "mailto:support@argomedix.com"
+      },
+      {
+        "href": "https://app.argomedix.com/welcome",
+        "label": "Sign Up"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Sign In",
-      "href": "https://app.argomedix.com"
+      "href": "https://app.argomedix.com/login"
     }
   },
   "navigation": {
@@ -40,36 +44,37 @@
             ]
           },
           {
-            "group": "Managing Your Data Room",
+            "group": "Data Room",
             "pages": [
               "data-room/overview",
               "data-room/folders-and-files",
               "data-room/uploading-documents",
-              "data-room/version-control"
+              "data-room/viewing-documents",
+              "data-room/search"
             ]
           },
           {
-            "group": "Access & Permissions",
+            "group": "Sharing & Access",
             "pages": [
-              "access/inviting-users",
-              "access/roles-and-permissions",
+              "access/groups-and-permissions",
+              "access/share-links",
               "access/guest-access",
               "access/watermarking"
             ]
           },
           {
-            "group": "Activity & Reporting",
+            "group": "Analytics & Audit",
             "pages": [
-              "reporting/activity-log",
-              "reporting/document-analytics",
+              "reporting/analytics",
               "reporting/audit-trail"
             ]
           },
           {
-            "group": "Settings & Security",
+            "group": "Workspace & Account",
             "pages": [
               "settings/workspace-settings",
-              "settings/security-and-compliance",
+              "settings/team-members",
+              "settings/account-security",
               "settings/notifications",
               "settings/billing"
             ]
@@ -91,9 +96,5 @@
       }
     ]
   },
-  "footer": {
-    "socials": {
-      "linkedin": "https://linkedin.com/company/argomedix"
-    }
-  }
+  "description": "The Data Room for MedTech Companies."
 }

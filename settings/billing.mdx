@@ -1,90 +1,64 @@
 ---
-title: "Manage Your ArgoMedix VDR Subscription and Billing"
+title: "Argomedix VDR Pricing Tiers and Plan Management"
 sidebarTitle: "Billing"
-description: "View your ArgoMedix VDR plan, manage payment methods, download invoices, and upgrade or downgrade your subscription from the billing dashboard."
+description: "Compare Seed and Scale tiers, view usage meters, upgrade or downgrade your Argomedix VDR workspace, and understand plan limits."
 ---
 
-Manage everything related to your ArgoMedix VDR subscription from the Billing section — view your current plan and usage, update payment details, download past invoices, and change your plan as your deal volume grows. All billing actions are available in one place so your team can maintain uninterrupted access to your data rooms.
+Argomedix VDR offers two subscription tiers designed for MedTech startups at different stages of fundraising. You can upgrade or downgrade directly from the **Billing** tab in **Workspace Settings**.
 
-## Accessing Billing
+## Tier comparison
 
-To open the billing dashboard, click your **organization name** in the top-left dropdown and navigate to **Workspace Settings → Billing**. Only users with the **Organization Admin** role can view or make changes to billing settings. If you need access to an invoice or plan information, ask your organization's Admin to retrieve it on your behalf.
+| Feature | Seed | Scale |
+| --- | --- | --- |
+| Storage | 1 GB | 10 GB |
+| Workspace admins | 1 (Owner only) | Up to 10 |
+| Guests | Unlimited | Unlimited |
+| Data rooms | 1 | 1 |
 
-## Plans Overview
+## View your current usage
 
-ArgoMedix VDR offers three subscription tiers to match the scale and security needs of your organization.
+The **Usage Meters** in the top navigation and the **Billing** tab show two progress bars:
 
-<CardGroup cols={3}>
-  <Card title="Starter" icon="seedling">
-    Up to 3 data rooms, 5 users, and 10 GB storage. Ideal for small teams running a single deal or pilot program.
-  </Card>
-  <Card title="Business" icon="briefcase">
-    Unlimited data rooms, 50 users, 1 TB storage, and advanced analytics. Built for active deal teams managing multiple concurrent processes.
-  </Card>
-  <Card title="Enterprise" icon="building">
-    Unlimited everything — users, storage, and data rooms — plus SSO, custom data residency, and a dedicated support contact. For large organizations with complex compliance requirements.
-  </Card>
-</CardGroup>
+- **Storage** - current usage against your tier limit in GB
+- **Admins** - current active admin count against your seat limit
 
-## Upgrading Your Plan
+Bars turn amber above 80% and red above 90%. Click either meter to jump to the relevant settings section.
 
-You can upgrade your ArgoMedix VDR plan at any time. The upgrade takes effect immediately and a prorated charge is applied for the remainder of your current billing period.
+## Upgrade to Scale
 
-<Steps>
-  <Step title="Open the Change Plan screen">
-    Navigate to **Workspace Settings → Billing → Change Plan**.
-  </Step>
-  <Step title="Select your new plan">
-    Review the available plans and click **Select** under the tier you want to upgrade to.
-  </Step>
-  <Step title="Review the prorated charge">
-    ArgoMedix VDR will display the prorated amount due today based on the days remaining in your current billing period. Confirm the amount before proceeding.
-  </Step>
-  <Step title="Enter or confirm your payment method">
-    Select an existing payment method on file or add a new card. Verify the billing address matches your card details.
-  </Step>
-  <Step title="Confirm the upgrade">
-    Click **Confirm Upgrade**. Your new plan limits and features are activated instantly. You will receive an email confirmation with the charge details.
-  </Step>
-</Steps>
+1. Open **Workspace Settings** and select the **Billing** tab.
+2. Click **Upgrade to Scale**.
+3. Review the features in the modal: 10 GB storage, up to 10 admins, and unlimited guests.
+4. Click **Upgrade Now**.
 
-<Info>
-  To **downgrade** your plan, contact **support@argomedix.com**. Downgrades take effect at the start of your next billing period. If your current usage exceeds the limits of the lower tier, you will need to archive or delete data rooms and remove users before the downgrade is processed.
-</Info>
+The change takes effect immediately. Only the Owner can upgrade.
 
-## Managing Payment Methods
+## Downgrade to Seed
 
-ArgoMedix VDR accepts the following payment methods:
+You can downgrade from Scale to Seed if your usage fits within Seed limits.
 
-- **Visa**
-- **Mastercard**
-- **American Express**
-- **Wire transfer** *(Enterprise plan only)*
+1. In the **Billing** tab, click **Downgrade to Seed**.
+2. Argomedix checks whether you exceed Seed limits.
 
-To view or update your payment methods, navigate to **Workspace Settings → Billing → Payment Methods**.
+If you have more than 1 admin or more than 1 GB of storage, a modal lists the issues you must resolve first:
 
-<Steps>
-  <Step title="Add a new card">
-    Click **Add Payment Method**, enter your card number, expiration date, CVV, and billing address, then click **Save Card**.
-  </Step>
-  <Step title="Set as default">
-    After saving, click **Set as Default** next to the new card. The default payment method is charged automatically at each billing renewal.
-  </Step>
-  <Step title="Remove an old card">
-    Click the **⋯** menu next to any non-default card and select **Remove**. You cannot remove the card currently set as your default without first designating another as default.
-  </Step>
-</Steps>
+- **Seat Limit Exceeded** - remove admins until only the Owner remains
+- **Storage Limit Exceeded** - delete files until you are under 1 GB
 
-## Invoices
+Once eligible, click **Downgrade to Seed** again to complete the change.
 
-Every invoice generated for your ArgoMedix VDR subscription is stored permanently in your billing history and is available to download at any time.
+## Pricing
 
-To access your invoices, navigate to **Workspace Settings → Billing → Invoice History**. Click any invoice row to open it, then click **Download PDF** to save a copy. Invoices are also automatically emailed to the **billing contact** on the account at the time each charge is processed.
+Current prices for Seed and Scale are published on the [Argomedix VDR pricing page](https://vdr.argomedix.com/#pricing). That page is always the most up to date source, so check it before upgrading.
 
-<Tip>
-  To update who receives invoice emails, go to **Workspace Settings → Billing** and update the **Billing Contact Email** field. This does not have to be the same email address as the Organization Admin.
-</Tip>
+<Card title="View current pricing" icon="tag" href="https://vdr.argomedix.com/#pricing">
+  Compare Seed and Scale prices on the Argomedix VDR website.
+</Card>
 
-<Note>
-  To cancel your subscription, contact **support@argomedix.com**. Cancellations take effect at the end of the current billing period. Your data is retained for **30 days** after cancellation before being permanently deleted — export any documents or audit logs you need to preserve before that window closes.
-</Note>
+For billing questions, email [support@argomedix.com](mailto:support@argomedix.com).
+
+## Related pages
+
+- [Workspace Settings](/settings/workspace-settings)
+- [Team Members](/settings/team-members)
+- [Notifications](/settings/notifications)

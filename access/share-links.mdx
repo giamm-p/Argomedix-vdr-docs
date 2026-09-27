@@ -1,0 +1,85 @@
+---
+title: "Create and Manage Share Links for Investor Groups"
+sidebarTitle: "Share Links"
+description: "Generate shareable links for permission groups, set optional expiry dates, copy links, view an active links table with filters, and revoke links without removing existing guest access."
+---
+
+Share links let you invite external investors into your Argomedix VDR. Each link is tied to exactly one permission group, so every guest who joins through it receives the same folder and document access. You can create links with or without expiration dates, copy them easily, and deactivate them when they are no longer needed.
+
+## Create a share link for a group
+
+1. Open the **Permissions** page and select the group you want to share.
+2. Click **Share Data Room** in the group header.
+3. In the dialog, choose whether to set an expiration:
+   - To add an expiry, check **Set up access expiration** and choose a value in **Expiration Date & Time**.
+   - To leave the link open indefinitely, leave the checkbox unchecked.
+4. Click **Generate Link**.
+5. The full URL appears in a green box. Click **Copy Link** to copy it to your clipboard.
+
+You can also click **Preview** inside the share dialog to see the data room as guests will see it before you send the link.
+
+<Note>
+  Every click on **Generate Link** creates a new, separate link for the group. A group can have several links at once, for example one per investor firm with different expiry dates. Each link is listed, tracked, and revoked on its own in the Active Links table.
+</Note>
+
+## Copy an existing link
+
+If you already generated a link and need the URL again, you do not need to create a new one.
+
+1. Go to **Analytics** in the top navigation.
+2. Find the link in the **Active Links** table.
+3. Click the copy icon next to the link hash to copy the full URL.
+
+## Active links table
+
+The Active Links table on the **Analytics** page lists every share link created in your workspace. Each row shows:
+
+- **Created On**: The date and time the link was generated.
+- **Created By**: The admin or owner who created it.
+- **Group**: The permission group the link belongs to. Clicking the group name jumps to that group's permissions page.
+- **Link**: A truncated hash with a copy button.
+- **Expiration**: The expiry date, or **No Expiration** if none is set.
+- **Status**: **Active**, **Expired**, or **Revoked**.
+- **Usage**: The number of guests who have joined through that link.
+
+### Filter the table
+
+Use the filter bar above the table to narrow results:
+
+- **Status**: All, Active, Expired, or Revoked.
+- **Created By**: Select one or more creators.
+- **Group**: Select one or more permission groups.
+
+Click **Reset all filters** to clear your selections.
+
+### Export the report
+
+Click **Export** at the top right to download a CSV of the filtered results, including creation date, creator, group, link URL, expiration, status, and usage count.
+
+## Deactivate a link
+
+1. In the Active Links table, find the link you want to stop.
+2. Click **Revoke** in the rightmost column.
+3. Confirm the action in the dialog.
+
+The link's status changes to **Revoked** immediately. Revoked links cannot be reactivated; if you need a new link for the same group, open the group and click **Share Data Room** again.
+
+## What happens to guests when a link changes
+
+Guests always enter the data room through the link they registered with, so the link's status controls their access:
+
+- **Expired link**: Anyone opening the link sees **This link is invalid or has expired.** This applies to new visitors and to guests who already registered through that link.
+- **Revoked link**: Same result as an expired link. Nobody can open the data room through it anymore, including guests who joined earlier.
+- **New link for the same group**: Guests on other links are unaffected. The new link gives additional people a way to join the same group with the same permissions.
+
+Revoking or expiring a link does not delete the guests or their activity history. They still appear in the group's guest list and in Analytics.
+
+<Warning>
+  To keep giving investors access after revoking or expiring their link, generate a new link for the group and send it to them. They register again through the new link.
+</Warning>
+
+## Next steps
+
+- [Manage groups and permissions](/access/groups-and-permissions)
+- [Understand guest access](/access/guest-access)
+- [Enable watermarking on shared documents](/access/watermarking)

@@ -1,94 +1,74 @@
 ---
-title: "Protect Documents with Dynamic Watermarking in ArgoMedix VDR"
+title: "Document Watermarking for Secure Viewing and Downloads"
 sidebarTitle: "Watermarking"
-description: "Enable dynamic watermarks in ArgoMedix VDR to stamp every document view with the reviewer's identity, deterring unauthorized sharing."
+description: "Learn how Argomedix VDR applies dynamic watermarks containing email, IP, and timestamp to documents in the viewer and on downloads. Covers the default setting and per-item toggle."
 ---
 
-Dynamic watermarking automatically overlays each page of a viewed document with the reviewer's identifying information — this deters unauthorized sharing and, if a document does leak, allows you to trace it directly back to the individual who accessed it. Watermarks are rendered at view time so every reviewer sees a uniquely personalized stamp without any changes to your original files.
+Argomedix VDR applies dynamic watermarks to documents so that every view and every download can be traced back to the individual guest. The watermark is rendered in real time and includes the guest's identity, session timestamp, and network address.
 
-## How Dynamic Watermarking Works
+## What the watermark contains
 
-When a reviewer opens a document in the ArgoMedix VDR built-in viewer, the platform automatically generates a personalized watermark overlay unique to that reviewer and renders it on every page in real time.
+Every watermark displays three lines of information:
 
-Key properties of this approach:
+1. **User email** (the guest's registered email address)
+2. **Timestamp with UTC offset** (the local time when the session started)
+3. **Client IP address** (resolved from the request headers, or `127.0.0.1` in local development)
 
-- **Original files are never modified.** The source document stored in your data room is always preserved in its original state.
-- **Each reviewer sees a unique watermark.** Two people opening the same document at the same time see completely different overlays tied to their own identity.
-- **Watermarks cannot be removed by the reviewer.** The watermark is applied as part of the secure viewing experience and is not accessible to the viewer as a separate layer.
+In the viewer, these three lines are shown as a single line with bullet separators when a compact representation is needed. In the overlay grid, they appear as three stacked lines repeated across the page at a -45 degree angle.
 
----
+## Where watermarks appear
 
-## Enabling Watermarks
+Watermarks are applied in the secure viewer for every supported document type:
 
-<Steps>
-  <Step title="Open Security settings">
-    Go to **Data Room Settings → Security**.
-  </Step>
-  <Step title="Toggle watermarking on">
-    Flip the **Enable Watermarking** toggle to the on position.
-  </Step>
-  <Step title="Choose the watermark content">
-    Select which data points to include in the watermark. You can combine any of the following: **Name**, **Email**, **IP Address**, **Date & Time**, and **Custom Text**. See [Watermark Variables](#watermark-variables) below for the full list and syntax.
-  </Step>
-  <Step title="Preview the watermark">
-    Click **Preview** to open a sample document with your configured watermark rendered in real time. Adjust opacity, position, and font size until the result is professional and readable.
-  </Step>
-  <Step title="Save">
-    Click **Save**. Watermarking is applied immediately to all subsequent document views in the data room.
-  </Step>
-</Steps>
+- **PDF** (Canvas-rendered grid overlay)
+- **Images** (PNG, JPG, GIF, WEBP, SVG) (drawn directly onto the Canvas)
+- **DOCX, PPTX, XLSX** (SVG pattern tile overlay)
+- **Video** (MP4, WEBM) (SVG overlay on the video element)
+- **DICOM** (`.dcm`) (viewer-level overlay)
+- **CAD** (`.stl`, `.obj`) (viewer-level overlay)
 
----
+When watermarks are enabled, the watermark also gets embedded permanently into downloaded PDF files. For images, the watermark is drawn onto the canvas before the download is generated.
 
-## Watermark Variables
+## Default watermark setting
 
-Use these variables in your watermark text field to insert dynamic per-reviewer values. Variables are replaced at render time with the reviewer's actual data.
+The workspace owner controls the default behavior from **Workspace Settings** under the **Customization** section. The setting is labeled **Watermark on Files** and has two options:
 
-| Variable | Inserted Value |
-|---|---|
-| `{{name}}` | Full name of the reviewer as registered in their profile. |
-| `{{email}}` | Email address associated with the reviewer's account or invitation. |
-| `{{ip}}` | IP address recorded at the time the document was opened. |
-| `{{date}}` | Date of access in `YYYY-MM-DD` format. |
-| `{{time}}` | Time of access in `HH:MM UTC` format. |
-| `{{company}}` | Reviewer's organization name, if provided at invite time or in their profile. |
+- **Original files (No Watermark - Default):** Watermarks are disabled. Guests see and download the original file without any overlay.
+- **Watermarked Files:** Watermarks are enabled for all viewers and downloads.
 
-**Example watermark text:**
-
-```
-{{name}} | {{email}}
-Accessed: {{date}} {{time}}
-IP: {{ip}}
-```
-
-This renders as a multi-line stamp unique to each reviewer session.
-
----
-
-## Custom Watermark Text
-
-In addition to dynamic variables, you can include static text — such as a confidentiality notice — that appears identically for every reviewer.
-
-Enter your static text directly in the **Watermark Text** field, mixing it with any variables you want:
-
-```
-CONFIDENTIAL — DO NOT DISTRIBUTE\n{{name}} | {{email}}\n{{date}} {{time}}
-```
-
-Use `\n` to insert a line break within the watermark string. There is no limit to the number of lines, but keep text concise so it remains legible without obscuring document content.
-
-**Positioning and opacity options:**
-
-| Option | Recommended Value | Notes |
-|---|---|---|
-| **Position** | Center-diagonal | Maximizes visibility across all page layouts. |
-| **Opacity** | 20–30% | Visible enough to deter sharing; unobtrusive enough to read content. |
-| **Font size** | 14–18 pt | Scales with document zoom in the viewer. |
-
-<Tip>
-  Place the watermark in the center-diagonal position for maximum visibility while keeping document content readable. Use 20–30% opacity for a professional look.
-</Tip>
+The default for new workspaces is **Original files (No Watermark)**. Changing this setting updates the Permissions page in real time and triggers an audit log entry.
 
 <Note>
-  Watermarks appear in the built-in document viewer and on printed copies if printing is permitted. They do not apply to downloaded files unless the download format is set to **PDF with Watermark** — this option is configurable in **Settings → Security → Download Format**.
+  Only the workspace owner can change the default watermark setting. Admins can still toggle watermarks on individual items.
 </Note>
+
+## Per-item watermark toggle
+
+Inside the **Permissions** page, when you select a group and open the **Data Room Permissions** tab, each folder and document row has a **Watermark** checkbox column. You can toggle watermarking independently for every item:
+
+- Checked: the item is watermarked for guests in that group.
+- Unchecked: the item is shown without a watermark for guests in that group.
+
+If the workspace default is set to **Original files (No Watermark)**, the Watermark column is disabled and shows a tooltip: **Watermarked files are not enabled.** A **Change Settings** link inside the tooltip opens the workspace settings modal so the owner can enable watermarking globally.
+
+## How permissions interact with watermarking
+
+Watermarking is only relevant when the permission level is **View** or **Download**. If an item is set to **Hidden**, the watermark toggle is inactive because the guest cannot see the item at all.
+
+When a guest opens a document, the viewer checks the resolved permission for that document. If the document inherits its permission from a parent folder, the watermark setting is inherited as well. If the document has an explicit permission override, its own watermark flag is used.
+
+## Downloads and watermarks
+
+When the workspace default is **Watermarked Files**, downloads are disabled entirely for guests. The guest sees a message that downloads are disabled for this file. This applies across all document types.
+
+When the workspace default is **Original files (No Watermark)** and a specific item has its watermark toggle turned on, the behavior depends on the viewer:
+
+- In the **PDF viewer**, the download button is still available if the permission is **Download**, but the downloaded file is permanently watermarked with the guest's identity.
+- In the **image viewer**, the watermark is drawn onto the canvas before the download starts.
+- For **DOCX, PPTX, XLSX, and video**, the download is blocked if watermarking is enabled for that item.
+
+## Related topics
+
+- [Groups and Permissions](/access/groups-and-permissions)
+- [Guest Access](/access/guest-access)
+- [Share Links](/access/share-links)

@@ -1,98 +1,91 @@
 ---
-title: "ArgoMedix VDR FAQ: Plans, Security, and Permissions"
+title: "Argomedix VDR FAQ: Plans, Sharing, and Security"
 sidebarTitle: "FAQ"
-description: "Answers to the most common questions about ArgoMedix VDR, including data security, user access, document handling, and subscription management."
+description: "Find answers about Argomedix VDR plans, guest sharing, permissions, security settings, and common account questions."
 ---
 
-Find answers to common questions about ArgoMedix VDR below — organized by topic to help you quickly locate what you need. If your question isn't covered here, visit the [Troubleshooting](/support/troubleshooting) guide or [contact support](/support/contact).
+Argomedix VDR is a MedTech fundraising data room with one workspace per data room. This FAQ covers the most common questions about plans and workspace limits, sharing with external investors, and keeping your documents secure.
 
-## Getting Started
+## Plans and Workspace
 
 <AccordionGroup>
-  <Accordion title="Do reviewers need to create an account?">
-    No. Reviewers access your data room through a secure email invitation link. They do not need to create an ArgoMedix VDR account. If your room requires NDA acceptance, they complete that step before viewing documents.
+  <Accordion title="What plans are available and what are the limits?">
+    Argomedix VDR offers two tiers: **Seed** and **Scale**.
+
+    - **Seed**: 1 GB storage and 1 admin (the owner). This is the default when you create a workspace.
+    - **Scale**: 10 GB storage and up to 10 admins. Scale also includes unlimited guests.
+
+    You can upgrade from Seed to Scale at any time from your workspace settings. See [Workspace Settings](/settings/workspace-settings) and [Billing](/settings/billing) for details.
   </Accordion>
 
-  <Accordion title="How many data rooms can I create?">
-    The number of data rooms available depends on your subscription plan:
-
-    - **Starter** — up to 3 data rooms
-    - **Business** — unlimited data rooms
-    - **Enterprise** — unlimited data rooms
-
-    See the [Billing](/settings/billing) page for full plan details and a feature comparison.
+  <Accordion title="Can I have more than one data room?">
+    No. One Argomedix VDR account corresponds to one workspace, and one workspace equals one data room. If you need a separate room for a different fundraise or project, that requires a separate account and workspace.
   </Accordion>
 
-  <Accordion title="Can I use ArgoMedix VDR on mobile?">
-    Yes. The reviewer portal and admin dashboard are fully responsive and work on iOS and Android browsers. A native mobile app is available on the App Store and Google Play for Business and Enterprise customers.
+  <Accordion title="How do I know when I am running out of storage?">
+    You will receive in-app bell notifications when your storage reaches 80% and again at 90% of your plan quota. You can also view current usage in [Workspace Settings](/settings/workspace-settings). To increase capacity, upgrade to Scale.
+  </Accordion>
+
+  <Accordion title="What happens when I first create a data room?">
+    Onboarding automatically seeds a standard folder taxonomy with placeholder documents so you can start organizing fundraising materials right away. You can rename, delete, or add folders and documents at any time. See [Create Data Room](/getting-started/create-data-room) and [Folders and Files](/data-room/folders-and-files).
   </Accordion>
 </AccordionGroup>
 
-## Security & Compliance
+## Sharing and Guests
 
 <AccordionGroup>
-  <Accordion title="Where is my data stored?">
-    By default, your data is stored in our US data centers. Business and Enterprise customers can choose EU or APAC data residency in **Workspace Settings → Data Residency**.
+  <Accordion title="How do I invite external investors to view documents?">
+    Guests are organized into **Groups**. Each group gets a share link that you can send to investors. Guests register with their name and email, then verify their account with an email OTP before they can access anything. Learn more in [Groups and Permissions](/access/groups-and-permissions) and [Guest Access](/access/guest-access).
   </Accordion>
 
-  <Accordion title="Is ArgoMedix VDR HIPAA compliant?">
-    Yes. ArgoMedix VDR is HIPAA compliant for healthcare customers. Contact support to request a Business Associate Agreement (BAA) for your organization.
+  <Accordion title="Can share links expire or be revoked?">
+    Yes. When you create a group share link, you can set an optional expiry date. You can also revoke a link at any time, which immediately removes access for guests who entered through that link. See [Share Links](/access/share-links).
   </Accordion>
 
-  <Accordion title="What happens to my data if I cancel?">
-    Your data remains accessible until the end of your current billing period. After cancellation, data is retained for 30 days to allow export, then permanently deleted.
+  <Accordion title="What permissions can I set for guests?">
+    Permissions are managed per group and can be applied at the folder or document level. For each item, you can choose:
 
-    <Warning>
-      Download your documents and audit trail before cancelling. Data cannot be recovered after the 30-day retention window expires.
-    </Warning>
+    - **Hidden**: the group cannot see the item at all.
+    - **View**: the group can preview the document in the secure viewer.
+    - **Download**: the group can preview and download the file.
+
+    You can also toggle watermarking on or off per group. See [Groups and Permissions](/access/groups-and-permissions) and [Watermarking](/access/watermarking).
+  </Accordion>
+
+  <Accordion title="What file types can guests view in the secure viewer?">
+    The secure viewer supports PDF, DOCX, PPTX, XLSX, images, video, DICOM, and CAD files. Guests do not need special software installed. See [Viewing Documents](/data-room/viewing-documents).
+  </Accordion>
+
+  <Accordion title="How does search work for guests and team members?">
+    Argomedix VDR provides full-text search across supported documents, including OCR for scanned files. Both admins and guests can use the search bar to quickly locate content. See [Search](/data-room/search).
   </Accordion>
 </AccordionGroup>
 
-## Document Management
+## Security
 
 <AccordionGroup>
-  <Accordion title="Can I restrict a reviewer from downloading documents?">
-    Yes. In **Data Room Settings → Security**, toggle off **Allow Downloads**. You can also override this setting at the folder or document level for more granular control. Reviewers can still view documents in the secure browser viewer even when downloads are disabled.
+  <Accordion title="What team roles exist and who can manage the workspace?">
+    There are two team roles: **owner** and **admin**.
+
+    - The **owner** is always one person and has full control. Ownership is transferable to another admin.
+    - **Admins** help manage the data room, upload documents, manage groups, and adjust permissions.
+
+    Seed allows only the owner. Scale allows up to 10 admins. See [Team Members](/settings/team-members).
   </Accordion>
 
-  <Accordion title="What file types are supported?">
-    ArgoMedix VDR supports the following file types:
-
-    | Category | Formats |
-    |---|---|
-    | Documents | PDF, DOCX, DOC, TXT, RTF |
-    | Spreadsheets | XLSX, XLS, CSV |
-    | Presentations | PPTX, PPT |
-    | Images | PNG, JPG, JPEG, GIF, TIFF |
-    | Archives | ZIP (auto-extracted on upload) |
-
-    See [Uploading Documents](/data-room/uploading-documents) for full details and size limits.
+  <Accordion title="Does the system log me out automatically?">
+    Yes. For security, you are automatically logged out after 30 minutes of inactivity. A warning modal appears at the 25-minute mark so you can stay logged in if you are still active. The timer pauses during file uploads so you are not interrupted mid-upload. See [Account Security](/settings/account-security).
   </Accordion>
 
-  <Accordion title="How does version control work?">
-    Right-click any document and select **Upload New Version** to replace it with an updated file. The full version history is preserved and accessible to Admins. Reviewers always see the current version automatically — no action required on their part.
-  </Accordion>
-</AccordionGroup>
-
-## Access & Invitations
-
-<AccordionGroup>
-  <Accordion title="How do I resend an invitation?">
-    To resend a pending invitation:
-
-    1. Open your data room and go to the **Users** tab.
-    2. Find the pending user in the list.
-    3. Click the **⋯** menu next to their name.
-    4. Select **Resend Invitation**.
-
-    The user will receive a fresh invitation email with a new secure link.
+  <Accordion title="How do I freeze my account if I suspect unauthorized access?">
+    You can freeze your account immediately through a security email link. This suspends access until you resolve the issue. See [Account Security](/settings/account-security) for instructions.
   </Accordion>
 
-  <Accordion title="Can I set an expiry date on a user's access?">
-    Yes. When inviting a user, set an **Access Expiry** date in the invitation form. Their access is automatically revoked at midnight on that date. You can extend access at any time by going to the **Users** tab, clicking **⋯** next to the user, and selecting **Edit Access**.
+  <Accordion title="How do notifications work and can I change the frequency?">
+    Notifications are delivered via the in-app bell and by email. You can set your email frequency to **immediately**, **hourly**, **daily**, **weekly**, or **disabled**. Daily and weekly digests let you choose the time (and day for weekly). See [Notifications](/settings/notifications).
   </Accordion>
 
-  <Accordion title="Can I invite someone to multiple data rooms?">
-    Yes. You can invite the same email address to as many data rooms as needed. Each invitation carries its own role and permissions, independent of any other rooms that person has been invited to.
+  <Accordion title="Where can I see who accessed what and when?">
+    The **Analytics** tab includes Data Room Activity, All Guests, Active Links, and an Audit Log. You can review activity and export data to CSV. See [Analytics](/reporting/analytics) and [Audit Trail](/reporting/audit-trail).
   </Accordion>
 </AccordionGroup>

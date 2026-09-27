@@ -1,77 +1,126 @@
 ---
-title: "How to Create and Configure an ArgoMedix VDR Data Room"
-sidebarTitle: "New Data Room"
-description: "Learn how to create a new data room in ArgoMedix VDR, configure its settings, and prepare it for document uploads and reviewer access."
+title: "Create and configure your MedTech data room in Argomedix VDR"
+sidebarTitle: "Create Data Room"
+description: "Set up your Argomedix VDR data room with MedTech diagnostic profiling, tailored folder templates, and a guided product tour you can restart anytime."
 ---
 
-A data room in ArgoMedix VDR is a secure, isolated workspace that lets you share sensitive documents with a defined group of reviewers under controlled conditions. Each data room operates independently — with its own access list, permissions, audit trail, and security settings — so you can run multiple deals or review processes simultaneously without any overlap. Common use cases include M&A due diligence, Series A and growth-stage fundraising, regulatory submissions, and clinical trial data sharing with sponsors or CROs.
+When you first sign up for Argomedix VDR, the onboarding flow helps you configure a data room that matches your company stage and product type. You can accept a tailored folder structure with placeholder documents, start from scratch, or skip the MedTech path entirely. After setup, an interactive guided tour walks you through the core features.
 
-## Create a New Data Room
+## Choose your industry
+
+The first step asks you to select your industry:
+
+- **MedTech** - Access 32 data room templates curated by MedTech experts. The system asks follow-up questions to recommend the best structure.
+- **Other industry** - Use a universal template for software and hardware companies.
+
+## MedTech diagnostic profiling
+
+If you choose MedTech, answer three questions so the system can suggest the right folder structure.
 
 <Steps>
-  <Step title="Open the New Data Room dialog">
-    From your **Dashboard**, click the **+ New Data Room** button in the top-right corner of the data rooms panel.
+  <Step title="Enter your company name">
+    This becomes your workspace and data room name.
   </Step>
-  <Step title="Enter a Data Room Name">
-    Type a clear, descriptive name for the data room. For sensitive deals, consider using a codename to avoid disclosing details prematurely — for example, **"Project Falcon – Series A"**.
+  <Step title="Select your company stage">
+    Choose from **Pre-seed**, **Seed**, **Series A**, or **Series B+**.
   </Step>
-  <Step title="Add a Description (optional but recommended)">
-    Enter a brief description to give your team context about the deal or purpose. This description is visible only to workspace members, not to external reviewers.
-  </Step>
-  <Step title="Choose a Data Room Type">
-    Select the security tier that matches your deal's requirements:
+  <Step title="Select your product type">
+    Choose from:
 
-    <CardGroup cols={2}>
-      <Card title="Standard" icon="folder-open">
-        Full document access for reviewers, including the ability to download permitted files and copy text. Best for lower-sensitivity workflows or internal reviews.
-      </Card>
-      <Card title="Confidential" icon="shield-halved">
-        Screenshot capture is disabled and copy-paste is restricted at the viewer level. Designed for highly sensitive deals where information leakage is a primary concern.
-      </Card>
-    </CardGroup>
+    - **Non-invasive hardware** (wearable devices or instruments)
+    - **Software/AI** (AI, digital health, or diagnostic software)
+    - **Implantable device** (implants or other high-risk devices)
+    - **Diagnostics** (in-vitro diagnostic kits or lab assays)
   </Step>
-  <Step title="Click Create Data Room">
-    Click the **Create Data Room** button to finalize setup. ArgoMedix VDR provisions your new room instantly and redirects you to its home screen, where you can begin uploading documents and configuring access.
+  <Step title="Select your regulatory data needs">
+    Choose **Lab and bench testing** or **Human clinical trials**. If you selected **Implantable device**, this is automatically set to human clinical trials.
   </Step>
 </Steps>
 
-<Tip>
-  Use a codename for sensitive deals (e.g., "Project Falcon") to avoid revealing deal details to reviewers before NDAs are signed.
-</Tip>
+### Resulting profiles
 
-## Data Room Settings
+Your answers map to one of 14 taxonomy profiles (TAX-01 through TAX-14). The profile determines which specialized folders are added to your data room. For example:
 
-After creating a data room, you can fine-tune its behavior at any time by clicking the **gear icon** (⚙) in the data room header to open the Settings panel. Settings are organized into three tabs:
+- Early-stage hardware with low clinical data needs (TAX-01) adds **Regulatory & Quality** and **Engineering & Product** folders focused on pre-submission strategy and design controls.
+- Late-stage software with high clinical data needs (TAX-11) adds **Clinical & Scientific**, **Cloud Operations & Release Management**, and expanded **Cybersecurity & Data Privacy** sections.
+- Class III implantable devices (TAX-05, TAX-09, TAX-12) always include clinical trial documentation, biocompatibility studies, and manufacturing readiness folders.
 
-<Tabs>
-  <Tab title="General">
-    Update the data room's **name** and **description**. Changes take effect immediately and are reflected in audit logs with a timestamp and the editor's name.
-  </Tab>
-  <Tab title="Security">
-    Configure protective controls that apply to all reviewers in the room:
+## Review and confirm your folder structure
 
-    - **Watermarking** — overlay each viewed page with the reviewer's email address and access timestamp to deter unauthorized sharing.
-    - **Download restrictions** — choose whether reviewers can download files, view only in-browser, or access printable versions.
-    - **Session timeout** — set an inactivity period (5–60 minutes) after which reviewer sessions are automatically terminated and require re-authentication.
-  </Tab>
-  <Tab title="Notifications">
-    Set up **email alerts** to keep your team informed of data room activity, including:
+After answering the questions, the system shows a **Recommended data room structure** preview. You can expand and collapse folders to inspect the full hierarchy. The preview displays:
 
-    - New reviewer logins
-    - Document views and downloads
-    - Q&A submissions (if the Q&A module is enabled)
-    - Access requests from uninvited users
-  </Tab>
-</Tabs>
+- The total number of folders and placeholder files
+- Your setup tags (for example, "Early stage", "Software/AI", "Clinical Studies")
+- A tree view of every folder and subfolder
 
-## Archiving and Deleting Data Rooms
+<Note>
+  Placeholder documents are labeled as such. They were created by MedTech experts, not AI. You can replace them by uploading your own files, or rename and delete any you do not need.
+</Note>
 
-When a deal concludes or a review period ends, you have two options for closing out a data room: **archiving** or **deleting**.
+You have two options:
 
-**Archiving** transitions a data room to read-only status. Archived rooms remain fully accessible to workspace admins for compliance and record-keeping purposes, and all documents, audit logs, and activity history are preserved. No new uploads, permission changes, or reviewer invitations can be made to an archived room. To archive a room, open **Settings → Archive** and confirm your selection.
+- **Use this folder structure** - Seeds your workspace with the full template.
+- **Start with a blank data room** - Creates an empty workspace with no folders.
 
-**Deleting** permanently removes the data room and all of its contents, including documents, reviewer lists, and audit logs. Deletion requires the **Admin** role and cannot be reversed by ArgoMedix VDR support.
+## Non-MedTech path
+
+If you select **Other industry**, the flow is shorter:
+
+<Steps>
+  <Step title="Enter your company name">
+    This becomes your workspace name.
+  </Step>
+  <Step title="Preview the universal template">
+    The generic taxonomy includes standard folders for corporate, financial, cap table, team, IP, market, and technology documentation.
+  </Step>
+  <Step title="Choose template or blank">
+    Accept the universal structure or start empty.
+  </Step>
+</Steps>
+
+## Common top-level folders
+
+Whether you choose MedTech or another industry, your data room typically starts with these universal folders:
+
+- **Executive Summary** - Pitch deck, one-pager, and high-level financial plan
+- **Corporate & Legal** - Incorporation, governance, material contracts, compliance, and insurance
+- **Financials** - Historical financials, projections, tax, and audit documents
+- **Cap Table & Equity** - Current cap table, financing documents, and option pool details
+- **Team** - Founder and executive agreements, employee documentation, and organizational chart
+- **Intellectual Property** - Patents, trademarks, IP assignments, and strategy
+- **Market & Commercial** - Market research, competitor analysis, and commercial strategy
+
+### MedTech-specific folders
+
+Depending on your diagnostic profile, the system may also add:
+
+- **Regulatory & Quality** - FDA or MDR strategy, quality management system documentation, and post-market surveillance
+- **Engineering & Product** - Design controls, verification and validation, software lifecycle, and cybersecurity
+- **Clinical & Scientific** - Pre-clinical data, clinical investigation plans, and study reports
+- **Manufacturing & Supply Chain** - Process validation, supplier quality agreements, and batch records
+- **Cloud Operations & Release Management** - CI/CD pipelines, MLOps, and cloud hosting architecture (for SaMD profiles)
+
+## Guided tutorial
+
+After your data room is created, an interactive guided tour starts automatically on desktop. The tour covers:
+
+1. **Data Room** - How to create folders, upload files, and organize content
+2. **Permissions** - How to create groups and set granular folder and file permissions
+3. **Team** - How to invite internal collaborators
+4. **Share** - How to generate encrypted, trackable share links with expiration options
+5. **Analytics** - How to track investor engagement and access compliance logs
+
+The tour routes you between the Data Room, Permissions, and Analytics pages automatically. You can navigate forward and backward through the steps, or quit at any time.
+
+### Restart the tutorial
+
+You can restart the guided tour at any time from the top navigation bar:
+
+1. Click the **Help** icon (question mark) in the top-right corner.
+2. Select **Tutorial** from the dropdown menu.
 
 <Warning>
-  Deleting a data room is permanent and cannot be undone. Download all documents and audit reports before deleting.
+  The interactive tutorial is optimized for desktop viewports. On mobile devices, you receive a notification that you can explore the data room using the navigation tabs and menu instead.
 </Warning>
+
+The system remembers whether you have completed the tutorial. Restarting it clears that status and begins the tour from the first step.

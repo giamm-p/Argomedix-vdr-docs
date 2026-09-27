@@ -1,0 +1,75 @@
+---
+title: "Manage Team Members and Workspace Roles"
+sidebarTitle: "Team Members"
+description: "Invite admins, resend or revoke invites, remove members, transfer ownership, and understand owner vs admin capabilities in Argomedix VDR."
+---
+
+Argomedix VDR workspaces have two internal team roles: **Owner** and **Admin**. This page covers how to invite team members, manage pending invitations, remove members, leave a workspace, and transfer ownership.
+
+## Team Roles
+
+| Capability | Owner | Admin |
+| --- | --- | --- |
+| Invite team members | Yes | No |
+| Remove team members | Yes | No |
+| Transfer ownership | Yes | No |
+| Upgrade or downgrade tier | Yes | No |
+| Empty data room | Yes | No |
+| Schedule workspace deletion | Yes | No |
+| Manage folders, documents, and guest permissions | Yes | Yes |
+| View analytics and audit log | Yes | Yes |
+| Leave workspace | No (must transfer first) | Yes |
+
+There is exactly one owner per workspace. The owner can transfer ownership to any active admin.
+
+## Invite a Team Member
+
+1. Open **Workspace Settings** and go to the **Team** tab.
+2. Under **Invite a Team Member**, enter the person's email address.
+3. The role is fixed to **Admin**.
+4. Click **Send Invite**.
+
+The invitee receives an email with a link to join the workspace. The invitation expires after 24 hours.
+
+<Note>
+  Tier limits apply:
+
+  - **Seed:** 1 admin total (including the owner). You cannot invite another admin without upgrading.
+  - **Scale:** up to 10 admins total.
+</Note>
+
+If you hit a limit, an upgrade prompt appears automatically.
+
+## Manage Pending Invitations
+
+Pending invitations appear in the team list with an **Invitation Pending** or **Invitation Expired** status.
+
+- **Resend:** Click **Resend** to generate a new 24-hour invitation link and re-send the email.
+- **Revoke:** Click **Revoke** to cancel the invitation and remove the pending member record.
+
+## Remove a Team Member
+
+1. Find the active admin in the team list.
+2. Click **Remove** next to their name.
+3. Confirm in the dialog.
+
+The member loses workspace access immediately. This action is logged in the audit trail.
+
+## Leave a Workspace
+
+Admins who are not the owner can leave a workspace:
+
+1. Go to **Workspace Settings** > **General**.
+2. In the Danger Zone section, click **Leave Workspace**.
+3. Confirm to permanently revoke your own access.
+
+Owners cannot leave until they transfer ownership to another admin.
+
+## Transfer Ownership
+
+1. In **Workspace Settings** > **General**, find **Transfer Ownership**.
+2. Select an active admin from the dropdown.
+3. Click **Transfer**.
+4. Type the exact data room name to confirm.
+
+After transfer, the previous owner becomes an admin and the new owner gains full owner privileges. The new owner receives an in-app notification that ownership has been transferred.

@@ -1,67 +1,108 @@
 ---
-title: "Understanding Your ArgoMedix VDR Data Room's Layout"
+title: "Data Room Overview: Navigate and Manage Documents"
 sidebarTitle: "Overview"
-description: "Learn how ArgoMedix VDR organizes your data room, from the dashboard and folder tree to documents, permissions, and the activity feed."
+description: "Learn the Argomedix VDR layout: folder tree, index numbering, placeholder documents, toolbar actions, and how guests experience your data room."
 ---
 
-When you open a data room in ArgoMedix VDR, you land on the main dashboard — a unified workspace that surfaces everything you need to manage documents, control access, and monitor reviewer activity. The interface is divided into distinct panels, each designed for a specific part of your workflow, so you can navigate large document sets, review permission assignments, and track actions without switching between separate screens.
+The Data Room is the central hub of your Argomedix VDR workspace. This page explains the layout you see when you open the Data Room tab, how the folder index works, what placeholder documents are, and how the toolbar helps you upload, organize, and share content. It also covers what external guests see when they access your room.
 
-## The Data Room Dashboard
+## Data Room Tab Layout
 
-The dashboard is organized into four primary areas that work together to give you full visibility and control over your data room.
+When you open the Data Room tab, the interface is split into two main areas:
 
-**Left Sidebar — Folders & Navigation**
-The left sidebar displays your complete folder tree. Click any folder to drill into its contents, collapse branches to reduce visual noise, or right-click to rename, move, or create subfolders. The sidebar also shows folder-level permission indicators so you can see at a glance which folders have restricted access.
+- **Left panel (desktop):** a collapsible folder tree labeled "Data Room Index" that shows every root folder and subfolder in your workspace.
+- **Right panel:** the document list for whichever folder is currently selected, plus the toolbar and search bar at the top.
 
-**Main Content Area — Document List**
-The central panel lists all files and subfolders within the selected folder. You can switch between list view and grid view, sort by name, date uploaded, or file size, and select multiple items for bulk actions such as moving, downloading, or changing permissions. Document status badges appear inline — indicating whether a file is processing, available, or restricted.
+On mobile, the folder tree is hidden behind a button labeled **Index:** followed by the current folder name. Tapping it opens a drawer so you can navigate without losing your place.
 
-**Right Panel — Activity Feed**
-The right panel streams a real-time log of every action taken in the room: document views, downloads, uploads, permission changes, and user logins. You can filter the feed by user, document, or action type, and export the log for compliance reporting. When you click any entry in the feed, ArgoMedix VDR highlights the related document or folder in the main content area.
+The top navigation of the workspace contains three tabs: **Data Room**, **Permissions**, and **Analytics**. The Data Room tab is where all document management happens. The Permissions tab is where you create groups, set per-folder access levels, and manage share links. The Analytics tab shows activity, guest lists, active links, and the audit log.
 
-**Top Toolbar — Upload, Invite, Search & Settings**
-The toolbar runs across the top of the dashboard and gives you quick access to the most frequent actions. Use **Upload** to add new documents, **Invite** to add users or groups, the **Search** bar to locate any document or user by keyword, and **Settings** to configure room-level options such as watermarking, NDA gates, and download restrictions.
+## Folder Tree and Index Numbering
 
----
+Argomedix automatically numbers every folder and document so your data room stays organized without manual ordering. The system uses a dotted index format such as `1.`, `1.1`, `1.2.3`.
+
+The numbering rules are:
+
+- Root folders get single numbers: `1. Executive Summary`, `2. Corporate & Legal`, `3. Financials`.
+- Subfolders append a second level: `2.1 Incorporation & Governance`, `2.2 Material Contracts`.
+- Documents inside a folder continue the sequence: `2.1.1 Certificate_of_Incorporation.pdf`, `2.1.2 Corporate_Bylaws.pdf`.
+
+If you rename a file to include its own structural prefix (for example, `1.1 Pitch_Deck.pdf`), the system detects the prefix and preserves it instead of generating a new one. This lets you align the index with your own numbering scheme when needed.
+
+You can drag folders and documents to reorder them. The index recalculates automatically after each move.
+
+## Placeholder Documents from Onboarding
+
+During onboarding, Argomedix seeds your workspace with a MedTech fundraising folder taxonomy based on your startup stage, product type, and clinical risk level. The taxonomy includes folders such as:
+
+- Executive Summary
+- Corporate & Legal
+- Financials
+- Regulatory & Quality
+- Clinical & Product Development
+- Intellectual Property
+- Operations & IT
+
+Each folder contains placeholder documents with suggested filenames. Placeholders appear as dashed-border cards labeled **Placeholder** and can be replaced in two ways:
+
+1. Click the **Upload Document** button on the placeholder card.
+2. Drag and drop a file directly onto the placeholder card. The card highlights in blue when a file is dragged over it.
+
+You can also remove a placeholder entirely by clicking the **X** icon that appears on hover.
+
+## Toolbar Actions
+
+The toolbar sits above the document list and provides the main actions you need to manage content.
+
+### Search
+
+A persistent search bar labeled **Search in Data Room...** sits at the top center of the page. It supports full-text search across document names and OCR-extracted text. Results appear in a dropdown as you type. Press Enter to open the full search results page.
+
+### Upload and Create Folder
+
+- **Upload documents:** click the plus icon in the toolbar, or drag files onto the dashed dropzone at the bottom of any folder. You can also click **Upload document** on any placeholder card.
+- **Create folder:** use the three-dot menu next to the folder title to add a sibling folder, add a subfolder, rename, move, or delete the current folder.
+
+### Share Data Room
+
+The **Share Data Room** button in the top-right opens a modal where you can generate a share link tied to a permission group. You can optionally set an expiration date and time for the link. Once generated, the link is copied to the clipboard and can be revoked later from the Permissions tab.
+
+## What Guests See
+
+When an external investor (guest) opens a share link, they see a simplified version of the Data Room:
+
+- The same folder tree and index numbering, but only folders and documents their group has permission to view.
+- Hidden folders are completely omitted. Empty folders are also hidden unless your workspace settings explicitly show them.
+- Guests can click any document they have access to and open it in the secure viewer. Supported formats include PDF, DOCX, PPTX, XLSX, images, video, DICOM, and CAD files (STL and OBJ).
+- If their group permission is **download** and watermarking is not enabled for the link, they can download the original file. If the link has watermarking turned on, downloads are disabled and the document is view-only.
+- Guests register with name and email, then verify access via an email OTP before they can see any content.
+
+Guests do not see upload buttons, folder creation menus, or the Share Data Room control. Their experience is strictly view and download based on the permissions you set in the Permissions tab.
 
 ## Key Concepts
 
 <CardGroup cols={2}>
-  <Card title="Folders" icon="folder">
-    Organize documents into logical groups that mirror your deal workflow. Folders support nested hierarchies and independent permission assignments at every level.
+  <Card title="One workspace = one data room" icon="box">
+    Your Argomedix account is tied to a single workspace. There is no concept of multiple data rooms or archived rooms. All documents live in the same indexed folder tree.
   </Card>
-  <Card title="Documents" icon="file">
-    Individual files stored, processed, and tracked in your room. Every document has a unique activity trail, version history, and permission profile.
+  <Card title="Owner and admin roles" icon="users">
+    Only the workspace owner and admins can upload, create folders, rename, move, delete, and share.
   </Card>
-  <Card title="Permissions" icon="lock">
-    Control access at the folder or document level. Grant view-only, download, print, or full-access rights to individual users or entire groups.
+  <Card title="Per-group permissions" icon="shield">
+    Access is controlled by Groups. Each group can be set to hidden, view, or download on any folder or document. Watermarking can be toggled per share link, not per user.
   </Card>
-  <Card title="Activity Feed" icon="clock-rotate-left">
-    Real-time log of every action in the room — who viewed what, when, and for how long. Exportable for audit and compliance purposes.
+  <Card title="Secure viewers" icon="eye">
+    Documents open in browser-based secure viewers. PDF, Office, images, video, DICOM, and CAD files are supported. No external software is required for guests.
   </Card>
 </CardGroup>
 
----
+## Related Pages
 
-## Data Room States
-
-A data room in ArgoMedix VDR can exist in one of four states. Understanding these states helps you manage the full lifecycle of a deal room from launch through long-term record retention.
-
-<AccordionGroup>
-  <Accordion title="Active">
-    The data room is fully operational. Invited users can log in, browse folders, view documents, and take any actions permitted by their assigned roles. You can continue uploading documents, adjusting permissions, and inviting new reviewers. This is the default state when a room is created and opened.
-  </Accordion>
-  <Accordion title="Archived">
-    The data room is preserved in a read-only state for compliance and record-keeping. No new documents can be uploaded, no permissions can be changed, and no new users can be invited. Existing users with active access can still view documents if their permissions remain intact, but no write operations are allowed. Use the Archived state after a deal closes to maintain a permanent, tamper-evident record.
-  </Accordion>
-  <Accordion title="Closed">
-    Access to the data room is temporarily suspended. Invited users cannot log in or view any documents until an administrator reopens the room. All documents, permissions, and activity history are preserved exactly as they were when the room was closed. Use this state when a deal is on hold or you need to pause diligence access without permanently altering the room.
-  </Accordion>
-  <Accordion title="Deleted">
-    The data room and all its contents are scheduled for permanent removal. Deletion is a two-step process — the room first enters a 30-day grace period during which an administrator can cancel the deletion. After 30 days, all documents, activity logs, and user data associated with the room are permanently and irreversibly removed.
-  </Accordion>
-</AccordionGroup>
-
-<Note>
-  Each data room is completely isolated — users invited to one data room cannot see or access any other data rooms in your workspace.
-</Note>
+- [Folders and Files](/data-room/folders-and-files) for detailed folder management and drag-and-drop reordering.
+- [Uploading Documents](/data-room/uploading-documents) for bulk uploads, file types, and size limits.
+- [Viewing Documents](/data-room/viewing-documents) for secure viewer behavior and supported formats.
+- [Search](/data-room/search) for full-text and OCR search behavior.
+- [Groups and Permissions](/access/groups-and-permissions) for setting guest access levels.
+- [Share Links](/access/share-links) for creating and revoking investor links.
+- [Watermarking](/access/watermarking) for how watermarked links restrict downloads.
+- [Analytics](/reporting/analytics) for Data Room Activity, guest lists, and CSV exports.

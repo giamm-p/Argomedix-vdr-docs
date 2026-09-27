@@ -1,136 +1,200 @@
 ---
-title: "ArgoMedix VDR Troubleshooting Guide for Common Issues"
+title: "Troubleshoot Argomedix VDR: Fix Common Errors Fast"
+description: "Resolve common Argomedix VDR errors including storage limits, invalid share links, expired OTP codes, access denied messages, and tier restrictions with step-by-step solutions."
 sidebarTitle: "Troubleshooting"
-description: "Fix common problems with document viewing, invitations, uploads, and account access in ArgoMedix VDR with these step-by-step solutions."
 ---
 
-If you encounter an issue with ArgoMedix VDR, this page covers the most common problems and how to resolve them quickly. If you don't find a solution here, [contact the support team](/support/contact) for further assistance.
+Argomedix VDR shows clear error messages when something goes wrong. This guide explains what each message means and the exact steps to fix it so you can keep your MedTech fundraising data room running smoothly.
 
-## Document Viewer Issues
-
-<AccordionGroup>
-  <Accordion title="Documents are loading slowly or not displaying">
-    Work through the following steps in order:
-
-    1. Check your internet connection and ensure you have a stable signal.
-    2. Refresh the page using **Ctrl+Shift+R** (Windows/Linux) or **Cmd+Shift+R** (macOS) to perform a hard reload and clear cached assets.
-    3. Verify you're using a supported browser:
-       - Chrome 100+
-       - Firefox 100+
-       - Safari 15+
-       - Edge 100+
-    4. If you're viewing a large PDF (100+ pages), allow up to 30 seconds for the document to fully render.
-
-    <Tip>
-      Switching to Google Chrome typically provides the best document rendering performance in ArgoMedix VDR.
-    </Tip>
-  </Accordion>
-
-  <Accordion title="I see a blank page when viewing a document">
-    The document may still be processing after a recent upload. Wait 2–3 minutes, then refresh the page and try again. Processing times vary based on file size and complexity.
-
-    If the blank page persists after 10 minutes, delete the file and re-upload it. If the problem continues after a second upload, [contact support](/support/contact) with the file name and data room details.
-  </Accordion>
-
-  <Accordion title="Watermarks are covering the document content">
-    You can reduce the visual impact of watermarks without disabling them entirely:
-
-    1. Go to **Data Room Settings → Security → Watermarking**.
-    2. Reduce the **Opacity** slider to between **15–20%** for a less intrusive appearance.
-    3. Click **Save** to apply the change.
-
-    <Note>
-      Watermark settings apply to all documents in the room. Disabling watermarks entirely may affect your audit trail and security posture.
-    </Note>
-  </Accordion>
-</AccordionGroup>
-
-## Invitation & Access Issues
+## Upload and storage issues
 
 <AccordionGroup>
-  <Accordion title="Reviewer says they didn't receive the invitation email">
-    Try the following steps:
+  <Accordion title="Storage limit exceeded. Upgrade to Scale to upload more files.">
+    This error appears when adding a file would push your workspace past its tier limit. Seed tier includes 1 GB and Scale includes 10 GB.
 
-    1. Ask the reviewer to check their **spam or junk mail** folder.
-    2. Ask them to whitelist **notifications@argomedix.com** in their email client.
-    3. Resend the invitation from **Users → ⋯ → Resend Invitation**.
-    4. If the email still doesn't arrive, try inviting an alternative email address for that reviewer.
+    **How to fix**
+
+    1. Go to **Settings > Billing** to review your current usage.
+    2. Remove unused documents or folders to free space.
+    3. Upgrade to Scale if you need more room. Only the workspace owner can change tiers.
 
     <Note>
-      Some corporate email servers apply aggressive filtering policies. If a reviewer's work email is blocked, a personal address is a reliable fallback while you investigate with their IT team.
+      The upload timer pauses during file transfers, so you will not be logged out while a large upload is in progress.
     </Note>
   </Accordion>
 
-  <Accordion title="Reviewer gets 'Access Denied' when clicking the invitation link">
-    This is most commonly caused by an expired invitation link. By default, invitation links expire after **7 days**.
+  <Accordion title="File size exceeds maximum limit of 2 MB.">
+    Individual files uploaded to workspace settings, such as logos, must be 2 MB or smaller.
 
-    To resolve this:
+    **How to fix**
 
-    1. Go to the **Users** tab in your data room.
-    2. Find the affected user and click **⋯ → Resend Invitation** to issue a fresh link.
-    3. Also verify the user's status in the **Users** tab — confirm their access has not been accidentally revoked.
-  </Accordion>
-
-  <Accordion title="I accidentally revoked a user's access">
-    You can restore access for a revoked user at any time:
-
-    <Steps>
-      <Step title="Open the Users tab">
-        Navigate to your data room and click the **Users** tab. Revoked users appear with a **Revoked** status badge.
-      </Step>
-      <Step title="Open the user menu">
-        Click the **⋯** menu next to the revoked user's name.
-      </Step>
-      <Step title="Restore access">
-        Select **Restore Access**, choose the appropriate role from the dropdown, and click **Confirm**.
-      </Step>
-    </Steps>
-
-    The user will receive an email notification confirming their access has been reinstated.
+    1. Compress the image or document.
+    2. Try uploading again.
   </Accordion>
 </AccordionGroup>
 
-## Upload Issues
+## Share link and access code issues
 
 <AccordionGroup>
-  <Accordion title="Upload is stuck or failing">
-    Check the following before retrying:
+  <Accordion title="This link is invalid or has expired.">
+    The share URL you opened is no longer active. The owner or an admin may have revoked it, or it reached its expiration date.
 
-    - Confirm the file is within the size limit: **500 MB** for individual documents, **2 GB** for ZIP archives.
-    - Verify your internet connection is stable — upload failures are most often caused by connection drops mid-transfer.
-    - For large files, use a **wired (Ethernet) connection** instead of Wi-Fi.
-    - If uploading multiple files at once, try uploading **one file at a time** to identify which file is causing the failure.
+    **How to fix**
 
-    <Warning>
-      Do not close the browser tab while an upload is in progress. Doing so will cancel the upload and you will need to start again.
-    </Warning>
+    1. Check the link for typos.
+    2. Contact the data room owner and ask for a new share link.
   </Accordion>
 
-  <Accordion title="My file type is not supported">
-    If ArgoMedix VDR does not accept your file type, convert the file to **PDF** before uploading — PDF is universally supported and provides the best viewing experience for reviewers.
+  <Accordion title="Invalid or inactive share link / Invalid link">
+    The system could not find a matching active share link for the URL you visited.
 
-    Note that executable files — including **.exe**, **.sh**, and **.bat** — are permanently blocked for security reasons and cannot be uploaded in any format.
+    **How to fix**
+
+    1. Make sure you copied the full URL, including the hash at the end.
+    2. Ask the owner to confirm the link is still enabled in **Permissions > Share Links**.
+  </Accordion>
+
+  <Accordion title="Invalid invite code / This invite code has expired / This invite code is no longer active">
+    The access code you entered during signup or workspace setup is invalid, expired, or was deactivated.
+
+    **How to fix**
+
+    1. Double-check the code for typos.
+    2. If the code expired, request a new access code through the welcome flow.
+    3. If you already have an account, log in instead of signing up again.
+  </Accordion>
+
+  <Accordion title="This invite code has already reached its maximum number of uses.">
+    The access code you tried to use has a usage cap and that cap has been reached.
+
+    **How to fix**
+
+    1. Request a new invite code via the welcome flow.
+    2. If you need a dedicated workspace, contact the person who shared the original code.
   </Accordion>
 </AccordionGroup>
 
-## Account & Billing Issues
+## OTP and verification issues
 
 <AccordionGroup>
-  <Accordion title="I can't access Workspace Settings">
-    Only users with the **Admin** role can access Workspace Settings. If you need access, ask your workspace Admin to grant you Admin rights from **Workspace Settings → Team Members**.
+  <Accordion title="Invalid or expired verification code / Verification code has expired. Please request a new one.">
+    The 6-digit OTP sent to your email is no longer valid, usually because too much time has passed.
 
-    If you are the account owner and still cannot access Workspace Settings, [contact support](/support/contact) and include your account email.
+    **How to fix**
+
+    1. Click **Resend code** on the verification screen.
+    2. Check your spam or junk folder for the new email.
+    3. Enter the fresh code within a few minutes of receiving it.
   </Accordion>
 
-  <Accordion title="My subscription payment failed">
-    To resolve a failed payment:
+  <Accordion title="Too many failed attempts. Please request a new code. / Too many attempts. Please try again in 10 minutes.">
+    You entered the wrong code too many times, or you requested too many codes in a short window.
 
-    1. Go to **Billing → Payment Methods** in your Workspace Settings.
-    2. Update your card details or add a new payment method.
-    3. Click **Retry Payment** to attempt the charge again immediately.
+    **How to fix**
 
-    <Warning>
-      Failed payments trigger a **7-day grace period** before your account is suspended. Update your payment information promptly to avoid service interruption.
-    </Warning>
+    1. Wait 10 minutes before requesting another code.
+    2. Use the most recent code only. Older codes are invalidated when a new one is sent.
+  </Accordion>
+
+  <Accordion title="Incorrect verification code. X attempts remaining.">
+    The code you entered does not match the one sent to your email.
+
+    **How to fix**
+
+    1. Check for typos, especially with similar characters like 0 and O.
+    2. Make sure you are using the latest code from your most recent email.
   </Accordion>
 </AccordionGroup>
+
+## Permission and download issues
+
+<AccordionGroup>
+  <Accordion title="Access denied: You do not have permission to download this document">
+    The guest account trying to download does not have download rights for that document or folder.
+
+    **How to fix**
+
+    1. The workspace owner or admin should open **Permissions > Groups** and confirm the group linked to the share link has **Download** access for the relevant folder or file.
+    2. If the permission is set to **View** only, guests can preview but not download.
+    3. If watermarking is enabled for the group, downloads may still be blocked depending on the exact permission configuration.
+  </Accordion>
+
+  <Accordion title="Only the workspace owner can manage team members / Only the workspace owner can invite team members">
+    You are an admin, but the action you tried requires owner privileges.
+
+    **How to fix**
+
+    1. Ask the workspace owner to perform the action, such as inviting a new admin or changing the subscription tier.
+    2. If ownership needs to change, the current owner can transfer ownership in **Settings > Team Members**.
+  </Accordion>
+
+  <Accordion title="Cannot invite a user as an Owner. Only one Owner is permitted per workspace.">
+    You tried to invite someone with Owner rights, which is not allowed.
+
+    **How to fix**
+
+    1. Invite the user as an **Admin** instead.
+    2. If you need to change ownership, use the **Transfer ownership** option in team settings.
+  </Accordion>
+
+  <Accordion title="Seed tier allows only 1 admin. Please upgrade to Scale. / Scale tier allows up to 10 admins. Limit reached.">
+    You hit the admin seat limit for your current tier. Seed allows 1 admin and Scale allows 10.
+
+    **How to fix**
+
+    1. Go to **Settings > Billing** and upgrade to Scale if you are on Seed.
+    2. If you are already on Scale, remove an inactive admin before inviting a new one.
+  </Accordion>
+</AccordionGroup>
+
+## Session and security issues
+
+<AccordionGroup>
+  <Accordion title="For your security, you will be logged out in X:XX due to inactivity.">
+    Argomedix VDR automatically logs you out after 30 minutes of inactivity. A warning appears at 25 minutes.
+
+    **How to fix**
+
+    1. Click **Stay Logged In** on the warning modal to reset the timer.
+    2. The timer resets across all open tabs automatically when you click the button.
+    3. If you are uploading files, the timer pauses so the upload is not interrupted.
+  </Accordion>
+
+  <Accordion title="User session not found. Please log in again.">
+    Your session expired or was cleared, often due to inactivity or signing out in another tab.
+
+    **How to fix**
+
+    1. Return to the login page and sign in again.
+    2. If the issue repeats, clear your browser cookies for argomedix.com and try once more.
+  </Accordion>
+</AccordionGroup>
+
+## Feature request limits
+
+<AccordionGroup>
+  <Accordion title="Come back tomorrow to request more features or contact support at support@argomedix.com.">
+    You reached the daily limit for submitting feature requests or upvoting ideas.
+
+    **How to fix**
+
+    1. Wait until the next calendar day to submit or upvote again.
+    2. If you have an urgent need, email [**support@argomedix.com**](mailto:support@argomedix.com) directly.
+  </Accordion>
+</AccordionGroup>
+
+## Still stuck?
+
+If an error persists after following the steps above, email [**support@argomedix.com**](mailto:support@argomedix.com) with:
+
+- The exact error message
+- What you were trying to do
+- The workspace name or share link URL (if safe to share)
+
+## Related articles
+
+- [Contact support](/support/contact)
+- [FAQ](/support/faq)
+- [Guest access](/access/guest-access)
+- [Share links](/access/share-links)
+- [Workspace settings](/settings/workspace-settings)

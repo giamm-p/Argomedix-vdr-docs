@@ -1,49 +1,89 @@
 ---
-title: "Get Your First ArgoMedix VDR Data Room Up and Running"
+title: "Get Started with Argomedix VDR in 6 Steps"
 sidebarTitle: "Quickstart"
-description: "Set up your first ArgoMedix VDR data room, upload documents, and invite reviewers in just a few steps. No technical experience required."
+description: "Learn how to sign up with an access code, complete onboarding, upload documents, create an investor group, share a link, and monitor activity in Analytics."
 ---
 
-This guide walks you through everything you need to get ArgoMedix VDR working for your first deal — from creating your account to uploading documents and inviting a reviewer to your data room. By the end, you'll have a live, permission-controlled data room ready to share with collaborators, and you'll know how to track their activity from the moment they log in.
+This guide walks you through launching your MedTech data room from signup to your first investor share. By the end, you will have a structured workspace, uploaded documents, a permissioned investor group, and a live share link.
 
 <Steps>
-  <Step title="Sign Up for ArgoMedix VDR">
-    Navigate to [app.argomedix.com](https://app.argomedix.com) and click **Sign Up** in the top-right corner. Enter your full name, work email address, and a strong password, then click **Create Account**. Check your inbox for a verification email and click the confirmation link to activate your account and access your workspace dashboard.
-  </Step>
-  <Step title="Create Your First Data Room">
-    From the Dashboard, click **+ New Data Room** in the upper-left panel. Give your room a clear, descriptive name — for example, *Series B Due Diligence* — and add an optional description so collaborators understand its purpose. When you're ready, click **Create** to provision your data room and open it.
-  </Step>
-  <Step title="Upload Your First Documents">
-    Inside your data room, click **Upload** in the toolbar. Drag and drop files directly onto the upload area, or click **Browse Files** to select them from your computer. ArgoMedix VDR supports the following formats:
+  <Step title="Get an access code and sign up">
+    Argomedix VDR is invite-only. You need a valid access code to create an account.
 
-    | Format | Extension |
-    |--------|-----------|
-    | PDF | `.pdf` |
-    | Word Document | `.docx` |
-    | Excel Spreadsheet | `.xlsx` |
-    | PowerPoint Presentation | `.pptx` |
-    | Images | `.png`, `.jpg` |
+    1. Go to [app.argomedix.com/welcome](https://app.argomedix.com/welcome).
+    2. Enter your access code on the welcome screen. If you already set up your data room while on the waitlist, activate your code at [app.argomedix.com/activate](https://app.argomedix.com/activate) instead.
+    3. If you do not have a code, click **Request a code** and submit your work email. You will receive a 6-digit verification code by email.
+    4. Verify your email and complete registration.
 
-    The maximum file size is **500 MB per file**. Upload progress is shown in real time, and files appear in the data room as soon as processing is complete.
+    <Note>
+      Access codes have usage limits and may expire. If your code is inactive or fully redeemed, request a new one.
+    </Note>
   </Step>
-  <Step title="Invite a Reviewer">
-    Click **Invite** in the top-right corner of your data room. Enter the reviewer's email address, then select the role that matches the level of access you want to grant:
+  <Step title="Complete onboarding and seeded folders">
+    After registration, the onboarding flow sets up your workspace.
 
-    - **Viewer** — can read and download documents only
-    - **Commenter** — can read, download, and leave comments on documents
-    - **Editor** — can read, download, comment, and upload or modify files
+    1. Confirm whether you are a **MedTech** startup.
+    2. Answer the diagnostic profiling questions about your **stage**, **product type**, and **clinical complexity**.
+    3. Choose to start from a **template** (recommended) or an **empty** workspace.
+    4. If you choose a template, Argomedix seeds your data room with folders and placeholder documents drawn from a taxonomy matrix tailored to your profile. For example, a Seed-stage hardware company receives folders for Executive Summary, Corporate & Legal, Financials, Cap Table, Team, Intellectual Property, Regulatory & Quality, and Engineering & Product.
+    5. Name your workspace and finish onboarding.
 
-    Click **Send Invitation**. Your reviewer will receive an email with a secure link to access the data room under the permissions you assigned.
+    <Tip>
+      You can always export your data room structure later, or empty it and start over from workspace settings.
+    </Tip>
   </Step>
-  <Step title="Track Document Activity">
-    Click **Activity** in the left sidebar to open the activity log. Here you can see who has viewed each document, how long they spent reading it, which pages they focused on, and what they downloaded — giving you real-time insight into reviewer engagement throughout your deal process.
+  <Step title="Upload documents into placeholders">
+    Open the **Data Room** tab from the top navigation.
+
+    1. Browse the seeded folder structure.
+    2. Click a placeholder document row and select **Upload** to replace it with a real file.
+    3. You can also create new folders and upload documents directly into them.
+
+    Supported formats include PDF, DOCX, PPTX, XLSX, images, video, DICOM, and CAD files. Uploaded files are scanned with OCR so they become searchable.
+  </Step>
+  <Step title="Create a group and set permissions">
+    Open the **Permissions** tab from the top navigation.
+
+    1. Click **Create Group** and name it (for example, "Lead Investors").
+    2. Select the group in the sidebar.
+    3. Open the **Data Room Permissions** tab.
+    4. For each folder or document, set the access level:
+       - **Hidden**: the group cannot see the item.
+       - **View**: the group can open and read the item.
+       - **Download**: the group can view and download the item.
+    5. Toggle the **Watermark** switch per item if you want guest emails overlaid on documents.
+
+    <Note>
+      You can duplicate a group to copy its entire permission matrix, then adjust for a different audience.
+    </Note>
+  </Step>
+  <Step title="Share the group link">
+    With a group selected, open the **Guests** tab or the share controls.
+
+    1. Click **Generate Link** to create a shareable link tied to the selected group.
+    2. Optionally set an **expiration date** so the link automatically deactivates.
+    3. Copy the link and send it to your investors.
+
+    Investors who receive the link register with their name and email, verify via an email OTP, and then see only the folders and documents you permitted for that group.
+
+    <Warning>
+      If you deactivate a share link, guests who joined through it will lose access. You can deactivate links at any time from the **Active Links** view in Analytics.
+    </Warning>
+  </Step>
+  <Step title="Watch activity in Analytics">
+    Open the **Analytics** tab from the top navigation.
+
+    1. **Data Room Activity** shows total views, average session duration, total downloads, and top files.
+    2. **All Guests** lists every registered guest, their last login, and group membership.
+    3. **Active Links** shows which share links are live, their expiry dates, and how many guests joined through each.
+    4. **Audit Log** records every administrative action, including permission changes, link creation, and team member invites.
+
+    Click **Export All** to download a CSV report of the activity data.
   </Step>
 </Steps>
 
-<Tip>
-  **Pro tip:** Organize your documents into labeled folders before inviting reviewers — it makes navigation much easier for guests who are unfamiliar with your file structure.
-</Tip>
+## Next steps
 
-<Note>
-  For a deeper walkthrough of account configuration — including SSO, two-factor authentication, and workspace branding — see the [Account Setup guide](/getting-started/account-setup).
-</Note>
+- [Create and manage your data room structure](/getting-started/create-data-room)
+- [Invite team members and manage roles](/settings/team-members)
+- [Configure security settings like password changes and auto-logout](/settings/account-security)

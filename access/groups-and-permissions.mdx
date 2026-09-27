@@ -1,0 +1,108 @@
+---
+title: "Manage Groups and Permissions in Argomedix VDR"
+sidebarTitle: "Groups and Permissions"
+description: "Create, rename, duplicate, and delete permission groups. Set folder and document access to hidden, view, or download, toggle watermarks per item, and preview the data room as a guest."
+---
+
+Argomedix VDR uses permission groups to control what external investors see. Each group gets its own access rules across your folder and document tree. You can create as many groups as you need, duplicate an existing group to save time, and preview the data room exactly as that group will see it.
+
+## Create a group
+
+1. Open the **Permissions** page from the top navigation.
+2. In the left sidebar, click **Create Group**.
+3. Enter a group name, such as `Acme Corp Seed Investors`.
+4. Click **Create**.
+
+The new group appears in the sidebar and is selected automatically so you can set its permissions right away.
+
+## Rename a group
+
+1. In the left sidebar, hover over the group name and click the three-dot menu.
+2. Select **Rename**.
+3. Enter the new name and click **Save**.
+
+You can also click the pencil icon next to the group name in the header to rename it.
+
+## Duplicate a group
+
+Duplicating copies the group and all of its explicit permissions to a new group.
+
+1. In the left sidebar, hover over the group and open the three-dot menu.
+2. Select **Duplicate**.
+3. The new group is created with the same name plus ` - Copy`.
+
+You can rename the duplicated group afterward.
+
+## Delete a group
+
+1. In the left sidebar, hover over the group and open the three-dot menu.
+2. Select **Delete**.
+3. Confirm the deletion.
+
+<Warning>
+  Deleting a group removes all access rights and permissions tied to that group. Guests who joined through the group's share link will no longer be able to access the data room. The folder structure and uploaded documents are not affected.
+</Warning>
+
+## Set permissions on folders and documents
+
+When you select a group, the **Data Room Permissions** tab shows the **Access Matrix**: a tree of every folder and document in your data room.
+
+For each item, you can set one of three access levels:
+
+- **Hidden** (eye-off icon): The item is completely invisible to guests in this group.
+- **View** (eye icon): Guests can see the item but cannot download it.
+- **Download** (download icon): Guests can view and download the item.
+
+To change a permission, click the corresponding icon for the folder or document. Changes save automatically.
+
+### How folder permissions affect contents
+
+Permissions cascade downward by default:
+
+- If you set a folder to **View**, all documents and subfolders inside it inherit **View** unless you override them explicitly.
+- If you set a folder to **Hidden**, everything inside it is hidden unless you override a specific item.
+- If you override a single document inside a folder, the folder header shows a warning indicator (an orange `!`) to let you know some contents differ from the parent.
+
+Empty folders are automatically treated as **Hidden** regardless of the parent setting, and they display an empty-folder warning.
+
+### Watermark toggle per item
+
+If watermarking is enabled for your workspace, a **Watermark** checkbox appears for each item. When checked, guests in this group see a dynamic watermark on that item when they view or download it.
+
+- Watermarking can only be toggled when the access level is **View** or **Download**.
+- If watermarking is disabled at the workspace level, the watermark column is grayed out and shows a tooltip that says **Watermarked files are not enabled**.
+
+To enable watermarking globally, open **Workspace Settings** and turn on the watermark setting.
+
+## Default permission setting for new items
+
+Your workspace has a default behavior for newly uploaded or created items. You can change it in **Workspace Settings** under the customization section. The options are:
+
+- **Inherit destination permissions**: New items take on the permission of the folder where they are placed.
+- **Always hidden**: New items are explicitly set to **Hidden** for all groups.
+- **Keep**: New items inherit from their parent folder, and copied or moved items keep their original permissions.
+
+The current default is shown at the top of the Access Matrix, with a **Change Settings** button that takes you directly to the workspace settings.
+
+## Preview as a group
+
+Before sending a share link, you can preview the data room exactly as guests in that group will see it.
+
+1. Select the group in the sidebar.
+2. Click **Preview** in the group header.
+3. A full-screen preview opens with a banner at the top: **Preview of the data room as seen by [Group Name]**.
+4. Click **Close Preview** to return to the permissions page.
+
+You can also open Preview from the three-dot menu next to any group in the sidebar.
+
+## Guest list per group
+
+Click the **Guests** tab on a selected group to see the **Registered Guests** who joined through any of this group's share links. The table shows each guest's name and email under **Guest Details**, plus their **Registration Date**.
+
+Click **Activity** next to a guest to open **Guest Activity History**, which lists their logins and document views with the file name and viewing duration. If nobody has joined yet, the tab shows **No Guests Yet**.
+
+## Next steps
+
+- [Share a group with a link](/access/share-links)
+- [Manage guest access](/access/guest-access)
+- [Enable watermarking](/access/watermarking)

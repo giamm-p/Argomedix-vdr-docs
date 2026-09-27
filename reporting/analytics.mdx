@@ -1,0 +1,140 @@
+---
+title: "Analytics and Data Room Activity Dashboard"
+sidebarTitle: "Analytics"
+description: "Track data room engagement with views, session duration, downloads, per-guest activity, active share links, and exportable reports."
+---
+
+The Analytics tab gives you a complete picture of how investors and guests interact with your data room. You can monitor overall engagement, inspect individual guest activity, manage active share links, and export everything to CSV.
+
+## Open Analytics
+
+1. Sign in to Argomedix VDR.
+2. Click **Analytics** in the top navigation bar.
+3. Use the left sidebar (desktop) or the horizontal sub-tabs (mobile) to switch between views:
+   - **Data Room Activity**
+   - **All Guests**
+   - **Active Links**
+   - **Audit Log**
+
+## Data Room Activity
+
+The Data Room Activity page shows high-level engagement metrics and top-10 leaderboards.
+
+### Summary KPIs
+
+At the top of the page you will see three cards:
+
+| Metric | What it means |
+| --- | --- |
+| **Views** | Total number of guest login sessions. A new session starts after 30 minutes of inactivity. |
+| **Average Session** | Average time each guest spends actively viewing documents. |
+| **File Downloads** | Total number of document downloads across all guests. |
+
+### Top 10 Leaderboards
+
+Below the KPIs you will find four ranked lists:
+
+- **Most Active Guest by Views**: guests ranked by number of login sessions.
+- **Most Active Guest by Duration**: guests ranked by total time spent viewing documents.
+- **Top 10 Files Viewed**: documents ranked by unique view events. Views are de-duplicated within a 15-minute window per guest.
+- **Top 10 Files Downloaded**: documents ranked by unique download events, also de-duplicated within 15 minutes.
+
+<Note>
+  If a file was deleted after being viewed or downloaded, it appears as **Deleted File** in the list.
+</Note>
+
+### Export Activity Report
+
+Click **Export All** in the top-right corner to download a CSV named `data_room_activity_YYYY-MM-DD.csv`. The file contains:
+
+- Summary metrics (total views, average session, total downloads)
+- All guests ordered by views
+- All guests ordered by duration (with raw seconds and formatted time)
+- All files ordered by views
+- All files ordered by downloads
+
+## All Guests
+
+The All Guests page lists every external investor who has registered in your data room.
+
+### Guest Table Columns
+
+| Column | Description |
+| --- | --- |
+| **Guest Name** | Name provided during registration. |
+| **Email** | Verified email address. |
+| **Group** | Permission group the guest belongs to. Click a group name to jump to its permission settings. |
+| **Invited By** | Admin or owner who created the share link the guest used (visible when there is more than one admin). |
+| **Expiration** | Share link expiration date, or "No Expiration" if none is set. |
+| **Last Login** | Most recent login timestamp, or "Never" if the guest has not logged in yet. |
+
+### Guest Actions
+
+For each guest you can:
+
+- **Preview**: click the eye icon to see exactly what the guest sees in the data room.
+- **Activity**: click the activity button to open a dialog showing the guest's full history of logins, document views, and downloads.
+- **Remove**: click the minus icon to revoke the guest's access. Their activity history is preserved for auditing.
+
+### Filter Guests
+
+Use the filter bar above the table to narrow the list:
+
+- **Date**: show only guests who registered or logged in within a date range.
+- **Group**: select one or more permission groups.
+- **Invited By**: select one or more admins (available when there is more than one admin).
+- **Status**: toggle between Active and Revoked guests.
+
+Click **Reset all filters** to clear every filter at once.
+
+### Export Guest List
+
+Click **Export** to download a CSV named `registered_guests_report_YYYY-MM-DD.csv`. The export includes the currently filtered guest list, applied filters, and a total count.
+
+## Active Links
+
+The Active Links page shows every share link that has been created for your data room.
+
+### Link Table Columns
+
+| Column | Description |
+| --- | --- |
+| **Created On** | Date and time the link was generated. |
+| **Created By** | Admin or owner email that created the link. |
+| **Group** | Permission group the link is tied to. |
+| **Link** | Short hash of the link URL. Click the copy icon to copy the full URL. |
+| **Expiration** | Expiration date, or "No Expiration". |
+| **Status** | Active, Expired, or Revoked. |
+| **Usage** | Number of times the link has been used to register or log in. |
+
+### Filter Links
+
+Use the filter bar to narrow the list:
+
+- **Status**: All, Active, Expired, or Revoked.
+- **Created By**: select one or more admins.
+- **Group**: select one or more permission groups.
+
+### Revoke a Link
+
+Click **Revoke** next to an active link to disable it. Nobody can open the data room through that URL anymore, including guests who already registered through it. See [Share links](/access/share-links) for details.
+
+### Export Link List
+
+Click **Export** to download a CSV named `active_links_report_YYYY-MM-DD.csv`. The export includes the currently filtered link list, applied filters, and a total count.
+
+## How Tracking Works
+
+Argomedix VDR tracks guest engagement automatically. When a guest opens a document, the system records:
+
+- **Document view**: starts when the document is opened and accumulates active time while the tab is visible. The view is discarded if it lasts less than one second.
+- **Duration**: pauses when the browser tab is hidden and resumes when it becomes visible again.
+- **Download**: recorded when the guest clicks the download button.
+
+Views and downloads are de-duplicated within a 15-minute window, so rapid repeated actions on the same document by the same guest count as one event.
+
+## Next Steps
+
+- Review the full chronological record of every action in your workspace on the [Audit Log](/reporting/audit-trail) page.
+- Learn how to manage guest access and permissions in [Groups and Permissions](/access/groups-and-permissions).
+- Create or manage share links in [Share Links](/access/share-links).

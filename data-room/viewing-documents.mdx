@@ -1,0 +1,120 @@
+---
+title: "View Documents Securely in Argomedix VDR"
+description: "Open PDFs, Office files, images, video, DICOM scans, and 3D CAD models in Argomedix VDR's secure viewers. Learn about watermarking, download controls, and anti-tamper protections."
+sidebarTitle: "Viewing Documents"
+---
+
+Argomedix VDR opens documents in secure, in-browser viewers that protect content from unauthorized copying or redistribution. Each viewer is tailored to the file type and enforces the permissions set for the guest or admin who opened it.
+
+## How to open a document
+
+From the Data Room, click any uploaded file. Argomedix VDR detects the extension and launches the correct viewer automatically.
+
+## Supported viewers
+
+### PDF viewer
+
+The PDF viewer renders each page as a high-resolution canvas with the following controls:
+
+- Zoom in and out from 10% to 800%
+- Fit-to-screen reset
+- Scroll or pinch to zoom with trackpad and mouse wheel
+
+If downloads are allowed and watermarking is enabled, the downloaded PDF is permanently stamped with the viewer's email, session timestamp, and IP address before it leaves the browser.
+
+<Warning>
+  The PDF viewer blocks printing via CSS, disables right-click context menus, and prevents text selection to reduce leakage risk.
+</Warning>
+
+### Word documents (DOCX)
+
+DOCX files open in a scrollable page viewer with navigation and zoom controls at the bottom. You can move between pages, zoom in and out, and close the viewer from the header.
+
+- Text selection is disabled
+- Hyperlinks are disabled
+- Watermark overlays appear when watermarking is enabled
+
+### Excel spreadsheets (XLSX)
+
+XLSX files render as interactive spreadsheet grids. You can zoom in and out and pan across sheets.
+
+- Cell text selection is disabled
+- Hyperlinks are disabled
+- Watermark overlays appear when watermarking is enabled
+
+### PowerPoint presentations (PPTX)
+
+PPTX files open as a scrollable slide deck. Navigate between slides with the previous and next buttons, and adjust zoom level with the bottom toolbar.
+
+- Text selection is disabled
+- Hyperlinks are disabled
+- Watermark overlays appear when watermarking is enabled
+
+### Images (PNG, JPG, GIF, WEBP, SVG)
+
+Images open in a zoomable canvas viewer powered by react-zoom-pan-pinch. You can pan, zoom, and reset the view.
+
+- Right-click and drag-to-save are blocked
+- Watermarks are burned directly onto the image canvas when enabled
+
+### Video (MP4, WEBM)
+
+Videos stream in a native HTML5 video player with standard playback controls.
+
+- The download control is hidden from the player UI
+- Watermark overlays cover the video area when enabled
+
+### DICOM medical imaging (DCM)
+
+DICOM files open in a Cornerstone-based medical image viewer. This viewer supports single files and multiframe series.
+
+| Action | Control |
+| --- | --- |
+| Scroll through slices | Left-click and drag, or mouse wheel |
+| Pan | Middle-click and drag, or Shift + left-click drag |
+| Zoom | Right-click and drag, or Ctrl/Cmd + left-click drag |
+| Adjust brightness (Window/Level) | Alt/Option + left-click drag |
+
+<Note>
+  The DICOM viewer is not a certified medical device and is not intended for primary diagnostic use.
+</Note>
+
+### 3D CAD models (STL, OBJ)
+
+STL and OBJ files render in a WebGL 3D viewer with orbit controls.
+
+| Action | Control |
+| --- | --- |
+| Rotate | Left-click and drag |
+| Pan | Right-click and drag |
+| Zoom | Scroll wheel or pinch |
+
+The viewer shows model metadata such as vertex and face counts. If WebGL is disabled in the browser, the viewer displays an error and suggests enabling hardware acceleration.
+
+<Note>
+  STEP and IGES files are not viewable in the browser. Upload them for download-only access, or convert to STL or OBJ for in-browser viewing.
+</Note>
+
+## Security protections common to all viewers
+
+Every secure viewer in Argomedix VDR applies the following protections:
+
+- **Right-click blocking**: context menus are disabled to prevent easy save actions
+- **Text selection blocking**: content cannot be copied from DOCX, XLSX, PPTX, and PDF viewers
+- **Hyperlink blocking**: embedded links are disabled to prevent external navigation
+- **Watermark overlays**: when the group permission has watermarking enabled, the viewer overlays the user's email, session timestamp, and IP address across the content
+- **Anti-tamper monitoring**: if a watermark overlay is removed or hidden via DOM manipulation, the viewer locks the session and shows an access-restricted message
+
+## Download behavior
+
+Whether a user can download a file depends on the group-level permission:
+
+- **View only**: the Download button is hidden
+- **View + Download**: the Download button is visible
+- **Watermarked downloads**: when watermarking is enabled, downloads are blocked entirely and the user sees a message that downloads are disabled for watermarked data rooms
+
+## Next steps
+
+- [Set group permissions and watermarking](/access/groups-and-permissions)
+- [Share files with guest links](/access/share-links)
+- [Search across document contents](/data-room/search)

@@ -1,0 +1,72 @@
+---
+title: "Search Documents and OCR Text in Argomedix VDR"
+description: "Use global search to find files by name and full-text content including OCR-extracted text. Learn how guest search is limited to permitted documents."
+sidebarTitle: "Search"
+---
+
+Argomedix VDR provides global search across your data room so you can quickly locate documents by file name or by the text contained inside them. Search includes text extracted from PDFs and images via OCR.
+
+## How global search works
+
+The search bar appears at the top of the Data Room. As you type, results update after a short debounce. Each result shows the file name and a snippet of matching text with the search term highlighted.
+
+<Steps>
+  <Step title="Open the search bar">
+    Click into the search field at the top of the Data Room page.
+  </Step>
+  <Step title="Type your query">
+    Enter a word or phrase. Results appear after about 400 milliseconds of inactivity.
+  </Step>
+  <Step title="Select a result">
+    Click any result to open the document directly in its secure viewer.
+  </Step>
+  <Step title="View all results">
+    Click **View detailed results** to open the full search results page for the current query.
+  </Step>
+</Steps>
+
+## What gets searched
+
+The search index includes:
+
+- Document file names
+- Text extracted from PDFs (embedded text or OCR-generated text)
+- Text extracted from images via OCR
+
+This means a scanned financial document or an uploaded screenshot becomes searchable once OCR processing completes.
+
+## Search results page
+
+The full results page shows every matching document in a card layout. Each card displays:
+
+- The file name
+- A highlighted text snippet showing where the match occurred
+- A file type icon
+
+Click any card to open the document in the secure viewer. You can return to the data room with the back arrow at the top of the results page.
+
+## Guest search behavior
+
+When a guest accesses the data room through a share link, the search scope is limited to documents their group is permitted to see.
+
+- Guests only see results for folders and documents that are not hidden from their group
+- Hidden documents do not appear in guest search results even if the query matches their content
+- Guests can use the same search bar and detailed results page, but the underlying query is automatically filtered to their allowed document set
+
+<Note>
+  If a guest sees no results, verify that their group has at least view permission on the relevant folders and documents.
+</Note>
+
+## Troubleshooting search
+
+| Problem | Cause | Solution |
+| --- | --- | --- |
+| Document does not appear in results | OCR has not finished yet | Wait a moment and try again; OCR runs in the background after upload |
+| No results for a known phrase | Document is hidden from the current user | Check group permissions in the Permissions page |
+| Search is slow | Large number of documents | Results are capped and ranked; try a more specific query |
+
+## Next steps
+
+- [Manage group permissions](/access/groups-and-permissions)
+- [Upload documents with OCR extraction](/data-room/uploading-documents)
+- [View documents in the secure viewer](/data-room/viewing-documents)
